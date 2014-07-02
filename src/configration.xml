@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-config.dtd">  
+
+<configuration>
+	<properties resource="mySql.properties"></properties>
+	
+	<typeAliases>
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooCard" alias="LengtooCard"/>
+	</typeAliases>
+	
+	<environments default="db">
+		<environment id="db">
+		<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driverClass}"/>
+				<property name="url" value="${jdbcUrl}"/>
+				<property name="username" value="${user}"/>
+				<property name="password" value="${password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooCard.xml"/>
+	</mappers>
+	
+</configuration>
