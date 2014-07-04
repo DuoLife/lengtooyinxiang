@@ -8,6 +8,7 @@
 */
 package test;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -32,11 +33,56 @@ public class TestMybatis_spring {
 	private static ILengtooCardDao dao;
 	
 	public static void main(String[] args) {
+		
+		int andWidth = 500;
+		int andHeight = 800;
+		int andOriginWidth = 380;
+		int andOriginHeight = 180;
+		int andOriginX = 60;
+		int andOriginY = 110;
+		Date createdate = new Date();;
+		
+		int width = 500;
+		int height = 800;
+		int originWidth = 380;
+		int originHeight = 180;
+		int originX = 60;
+		int originY = 110;
+		int smallWidth = 320;
+		int smallHeight = 512;
+		String smallImgurl = "/img/small_abc.jpg";
+		String bigImgurl = "/img/abc.jpg";
+		String uploadIp = "127.0.0.1";
+		String defaultTest = "把祝福送给你的小伙伴吧";
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext(path);
 		dao = (ILengtooCardDao) context.getBean("cardDao");
-		List<Map> l = dao.getAllCardMesg("");
-		for(Map m: l) {
-			System.out.println(m);
-		}
+		
+		LengtooCard lengtooCard = new LengtooCard();
+		lengtooCard.setAnd_height(andHeight);
+		lengtooCard.setAnd_origin_width(andOriginWidth);
+		lengtooCard.setAnd_origin_height(andOriginHeight);
+		lengtooCard.setAnd_origin_x(andOriginX);
+		lengtooCard.setAnd_origin_y(andOriginY);
+		lengtooCard.setAnd_width(andWidth);
+		lengtooCard.setBig_imgurl(bigImgurl);
+		lengtooCard.setCreatedate(createdate);
+		lengtooCard.setDefault_test(defaultTest);
+		lengtooCard.setHeight(height);
+		lengtooCard.setOrigin_height(originHeight);
+		lengtooCard.setOrigin_width(originWidth);
+		lengtooCard.setOrigin_x(originX);
+		lengtooCard.setOrigin_y(originY);
+		lengtooCard.setSmall_height(smallHeight);
+		lengtooCard.setSmall_imgurl(smallImgurl);
+		lengtooCard.setSmall_width(smallWidth);
+		lengtooCard.setUpload_ip(uploadIp);
+		lengtooCard.setWidth(width);
+		
+		dao.addLengtooCard(lengtooCard);
+//		List<Map> l = dao.getAllCardMesg("");
+//		for(Map m: l) {
+//			System.out.println(m);
+//		}
 	}
 }

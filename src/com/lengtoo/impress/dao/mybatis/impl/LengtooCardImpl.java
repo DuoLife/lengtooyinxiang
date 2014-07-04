@@ -60,4 +60,12 @@ public class LengtooCardImpl extends SqlSessionDaoSupport implements ILengtooCar
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.dao.ILengtooCardDao#addLengtooCard(java.util.Map)
+	 */
+	public Map addLengtooCard(LengtooCard lengtooCard) {
+		int isOk = getSqlSession().insert("LengtooCard.insertOne", lengtooCard);
+		return null;
+	}
+
 }

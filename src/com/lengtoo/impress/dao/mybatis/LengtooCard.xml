@@ -4,7 +4,17 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
  
  <mapper namespace="LengtooCard">
+ 	<insert id="insertOne" parameterType="LengtooCard">
+	 	<selectKey resultType="long" keyProperty="cardId">
+	 		select last_insert_id();
+	 	</selectKey>
+ 		insert into lengtoo_card (big_imgurl, small_imgurl, and_origin_x, and_origin_y, and_width, and_height, origin_x, origin_y, width, height, default_text, upload_ip, createdate, origin_width, 
+ 		origin_height, small_width, small_height, and_origin_width, and_origin_height) values ( #{big_imgurl}, #{small_imgurl}, #{and_origin_x}, #{and_origin_y}, #{and_width}, 
+ 		#{and_height}, #{origin_x}, #{origin_y}, #{width}, #{height}, #{default_text}, #{upload_ip}, #{createdate}, #{origin_width}, 
+ 		#{origin_height}, #{small_width}, #{small_height}, #{and_origin_width}, #{and_origin_height});
+ 	</insert>
  	<select id="selectAll" parameterType="String" resultType="LengtooCard">
  		select * from lengtoo_card
  	</select>
  </mapper>
+ 
