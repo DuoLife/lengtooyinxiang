@@ -12,6 +12,8 @@ package com.lengtoo.impress.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.lengtoo.impress.dao.po.LengtooCard;
+
 /**
  * <p>Title: ILengtooCardDao.java</p>
  * <p>Description: </p>
@@ -34,4 +36,16 @@ public interface ILengtooCardDao {
 	 * @date 2014-6-27
 	 */
 	List<Map> getAllCardMesg(String date);
+	
+	/**
+	 * 
+	 * @author xuming
+	 * 
+	 * @param lengtooCard信息
+	 * 
+	 * @return 操作状态码，成功与否
+	 * 
+	 * @date 2014-7-4
+	 */
+	Map addLengtooCard(LengtooCard lengtooCard);
 }
