@@ -31,7 +31,7 @@ public class LengtooCard implements Serializable{
 	private int small_height;
 	private int and_origin_width;
 	private int and_origin_height;
-	private String default_test;
+	private String default_text;
 	private String upload_ip;
 	private Date createdate;
 	
@@ -51,7 +51,7 @@ public class LengtooCard implements Serializable{
 		result = prime * result
 				+ ((createdate == null) ? 0 : createdate.hashCode());
 		result = prime * result
-				+ ((default_test == null) ? 0 : default_test.hashCode());
+				+ ((default_text == null) ? 0 : default_text.hashCode());
 		result = prime * result + height;
 		result = prime * result + origin_height;
 		result = prime * result + origin_width;
@@ -100,10 +100,10 @@ public class LengtooCard implements Serializable{
 				return false;
 		} else if (!createdate.equals(other.createdate))
 			return false;
-		if (default_test == null) {
-			if (other.default_test != null)
+		if (default_text == null) {
+			if (other.default_text != null)
 				return false;
-		} else if (!default_test.equals(other.default_test))
+		} else if (!default_text.equals(other.default_text))
 			return false;
 		if (height != other.height)
 			return false;
@@ -237,10 +237,10 @@ public class LengtooCard implements Serializable{
 		and_origin_height = andOriginHeight;
 	}
 	public String getDefault_test() {
-		return default_test;
+		return default_text;
 	}
 	public void setDefault_test(String defaultTest) {
-		default_test = defaultTest;
+		default_text = defaultTest;
 	}
 	public String getUpload_ip() {
 		return upload_ip;
@@ -262,7 +262,7 @@ public class LengtooCard implements Serializable{
 				+ ", and_origin_x=" + and_origin_x + ", and_origin_y="
 				+ and_origin_y + ", and_width=" + and_width + ", big_imgurl="
 				+ big_imgurl + ", cardid=" + cardid + ", createdate="
-				+ createdate + ", default_test=" + default_test + ", height="
+				+ createdate + ", default_test=" + default_text + ", height="
 				+ height + ", origin_height=" + origin_height
 				+ ", origin_width=" + origin_width + ", origin_x=" + origin_x
 				+ ", origin_y=" + origin_y + ", small_height=" + small_height
