@@ -52,9 +52,9 @@ public class LengtooCardImpl extends SqlSessionDaoSupport implements ILengtooCar
 			card.put("Height", c.getHeight());
 			card.put("Origin_x", c.getOrigin_x());
 			card.put("Origin_y", c.getOrigin_y());
-			card.put("Small_imgurl()", c.getSmall_imgurl());
-			card.put("Upload_ip()", c.getUpload_ip());
-			card.put("Width()", c.getWidth());
+			card.put("Small_imgurl", c.getSmall_imgurl());
+			card.put("Upload_ip", c.getUpload_ip());
+			card.put("Width", c.getWidth());
 			result.add(card);
 		}
 		return result;
