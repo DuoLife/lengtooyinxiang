@@ -39,7 +39,7 @@ public class TestMybatis_spring {
 		int andOriginWidth = 380;
 		int andOriginHeight = 180;
 		int andOriginX = 60;
-		int andOriginY = 110;
+		int andOriginY = 540;
 		Date createdate = new Date();;
 		
 		int width = 500;
@@ -47,11 +47,11 @@ public class TestMybatis_spring {
 		int originWidth = 380;
 		int originHeight = 180;
 		int originX = 60;
-		int originY = 110;
+		int originY = 540;
 		int smallWidth = 320;
 		int smallHeight = 512;
-		String smallImgurl = "/img/small_abc.jpg";
-		String bigImgurl = "/img/abc.jpg";
+		String smallImgurl = "/img/small_08.png";
+		String bigImgurl = "/img/08.png";
 		String uploadIp = "127.0.0.1";
 		String defaultTest = "把祝福送给你的小伙伴吧";
 		
