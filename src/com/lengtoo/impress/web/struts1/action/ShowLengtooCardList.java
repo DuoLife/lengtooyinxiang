@@ -9,6 +9,8 @@
 */
 package com.lengtoo.impress.web.struts1.action;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +51,17 @@ public class ShowLengtooCardList extends Action{
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		Map result = new HashMap();
-		String date = request.getParameter("date");
+		Map paramsMap = new HashMap();
+		boolean refresh = Boolean.parseBoolean(request.getParameter("refresh"));
+		String date = null;
+		if(refresh) {
+			SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			date = sf.format(new Date());
+		}else {
+			date = request.getParameter("date");
+		}
+		paramsMap.put(date, date);
+		//paramsMap.put("refresh", refresh);
 		List<Map> list =  service.getAllCardMesg(date);
 		for (Map m: list) {
 			String bStr = (String) m.get("Big_imgurl");

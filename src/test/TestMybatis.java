@@ -12,6 +12,8 @@ package test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -48,7 +50,9 @@ public class TestMybatis {
 	}
 	
 	public static void main(String[] args) {
-		List<LengtooCard> list = session.selectList("LengtooCard.selectAll"); 
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String date = sf.format(new Date());
+		List<LengtooCard> list = session.selectList("LengtooCard.selectAll", "Mon Jul 14 19:03:57 CST 2014"); 
 		for(LengtooCard card: list) {
 			System.out.println(card);
 		}

@@ -14,7 +14,7 @@
  		#{origin_height}, #{small_width}, #{small_height}, #{and_origin_width}, #{and_origin_height});
  	</insert>
  	<select id="selectAll" parameterType="String" resultType="LengtooCard">
- 		select * from lengtoo_card
+ 		select * from lengtoo_card where createdate &lt; #{createdate} order by createdate desc limit 20
  	</select>
  </mapper>
  
