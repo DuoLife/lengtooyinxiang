@@ -236,11 +236,11 @@ public class LengtooCard implements Serializable{
 	public void setAnd_origin_height(int andOriginHeight) {
 		and_origin_height = andOriginHeight;
 	}
-	public String getDefault_test() {
+	public String getDefault_text() {
 		return default_text;
 	}
-	public void setDefault_test(String defaultTest) {
-		default_text = defaultTest;
+	public void setDefault_text(String defaultText) {
+		default_text = defaultText;
 	}
 	public String getUpload_ip() {
 		return upload_ip;

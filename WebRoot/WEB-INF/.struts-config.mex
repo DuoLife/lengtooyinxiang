@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlowViewLayout Version="1.2">
-  <StrutsActivity path="/lengtoocardlist.do" />
+  <StrutsActivity path="/lengtoocardlist.do" location="50,50" dimension="393,116" />
+  <StrutsActivity path="/lengtoowallpaperlist.do" location="650,50" dimension="393,116" />
 </FlowViewLayout>
 

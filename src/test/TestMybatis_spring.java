@@ -53,7 +53,7 @@ public class TestMybatis_spring {
 		String smallImgurl = "/img/small_08.png";
 		String bigImgurl = "/img/08.png";
 		String uploadIp = "127.0.0.1";
-		String defaultTest = "把祝福送给你的小伙伴吧";
+		String defaultText = "把祝福送给你的小伙伴吧";
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(path);
 		dao = (ILengtooCardDao) context.getBean("cardDao");
@@ -67,7 +67,7 @@ public class TestMybatis_spring {
 		lengtooCard.setAnd_width(andWidth);
 		lengtooCard.setBig_imgurl(bigImgurl);
 		lengtooCard.setCreatedate(createdate);
-		lengtooCard.setDefault_test(defaultTest);
+		lengtooCard.setDefault_text(defaultText);
 		lengtooCard.setHeight(height);
 		lengtooCard.setOrigin_height(originHeight);
 		lengtooCard.setOrigin_width(originWidth);

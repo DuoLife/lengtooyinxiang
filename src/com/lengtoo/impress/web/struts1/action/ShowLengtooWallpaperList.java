@@ -1,10 +1,10 @@
 /**
-* <p>Title: ShowLengtooCardList.java</p>
+* <p>Title: ShowLengtooWallpaperList.java</p>
 * <p>Description: </p>
 * <p>Copyright: Copyright (c) 2014</p>
 * <p>Company: ColdWorks</p>
 * @author xuming
-* @date 2014-7-2
+* @date 2014-7-22
 * @version 1.0
 */
 package com.lengtoo.impress.web.struts1.action;
@@ -26,23 +26,24 @@ import org.apache.struts.action.ActionMapping;
 
 import com.google.gson.Gson;
 import com.lengtoo.impress.returndata.ReturnData;
-import com.lengtoo.impress.service.ILengtooCardService;
+import com.lengtoo.impress.service.ILengtooWallpaperService;
 
 /**
- * <p>Title: ShowLengtooCardList.java</p>
+ * <p>Title: ShowLengtooWallpaperList.java</p>
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2014</p>
  * <p>Company: ColdWorks</p>
  * @author xuming
- * @date 2014-7-2
+ * @date 2014-7-22
  * Email: vip6ming@126.com
  */
-public class ShowLengtooCardList extends Action{
+public class ShowLengtooWallpaperList extends Action{
 
-	private ILengtooCardService service;
-	public void setService(ILengtooCardService service) {
+	private ILengtooWallpaperService service;
+	public void setService(ILengtooWallpaperService service) {
 		this.service = service;
 	}
+	
 	private static final String url = "http://lengtucao.com/lengtooyinxiang";
 	//private static final String url = "http://192.168.2.101:2103/lengtooyinxiang";
 	//Logger log = Logger.getLogger("abc");
@@ -62,7 +63,7 @@ public class ShowLengtooCardList extends Action{
 		}
 		paramsMap.put(date, date);
 		//paramsMap.put("refresh", refresh);
-		List<Map> list =  service.getAllCardMesg(date);
+		List<Map> list =  service.getAllWallpaperMesg(date);
 		for (Map m: list) {
 			String bStr = (String) m.get("Big_imgurl");
 			String sStr = (String) m.get("Small_imgurl");
@@ -75,5 +76,5 @@ public class ShowLengtooCardList extends Action{
 		ReturnData.returnData(response, result);
 		return null;
 	}
-	
+
 }

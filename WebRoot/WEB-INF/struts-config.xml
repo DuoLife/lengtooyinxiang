@@ -7,6 +7,7 @@
   <global-forwards />
   <action-mappings>
   	<action path="/lengtoocardlist" type="com.lengtoo.impress.web.action.ShowCardList"></action>
+  	<action path="/lengtoowallpaperlist" type="com.lengtoo.impress.web.action.ShowLengtooWallpaperList"></action>
   </action-mappings>
   
   <controller>

@@ -48,7 +48,7 @@ public class LengtooCardImpl extends SqlSessionDaoSupport implements ILengtooCar
 			card.put("Origin_y", c.getOrigin_y());
 			card.put("Origin_width", c.getOrigin_width());
 			card.put("Origin_height", c.getOrigin_height());
-			card.put("Default_test", c.getDefault_test());
+			card.put("Default_text", c.getDefault_text());
 			card.put("And_width", c.getAnd_width());
 			card.put("And_height", c.getAnd_height());
 			card.put("And_origin_x", c.getAnd_origin_x());

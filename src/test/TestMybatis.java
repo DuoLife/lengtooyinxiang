@@ -22,6 +22,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.lengtoo.impress.dao.po.LengtooCard;
+import com.lengtoo.impress.dao.po.LengtooWallpaper;
 
 /**
  * <p>Title: TestMybatis.java</p>
@@ -52,8 +53,8 @@ public class TestMybatis {
 	public static void main(String[] args) {
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String date = sf.format(new Date());
-		List<LengtooCard> list = session.selectList("LengtooCard.selectAll", "Mon Jul 14 19:03:57 CST 2014"); 
-		for(LengtooCard card: list) {
+		List<LengtooWallpaper> list = session.selectList("LengtooWallpaper.selectAll", "2014-07-22 16:03:06"); 
+		for(LengtooWallpaper card: list) {
 			System.out.println(card);
 		}
 	}

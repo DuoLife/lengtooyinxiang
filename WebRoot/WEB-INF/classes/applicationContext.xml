@@ -25,10 +25,19 @@
 	<bean id="cardDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooCardImpl">
 		<property name="sqlSessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean id="lengtooService" class="com.lengtoo.impress.service.impl.LengtooCardServiceImpl">
+	<bean id="wallPaperDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooWallpaperImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="cardService" class="com.lengtoo.impress.service.impl.LengtooCardServiceImpl">
 		<property name="dao" ref="cardDao"></property>
 	</bean>
+	<bean id="wallpaperService" class="com.lengtoo.impress.service.impl.LengtooWallpaperServiceImpl">
+		<property name="dao" ref="wallPaperDao"></property>
+	</bean>
 	<bean name="/lengtoocardlist" class="com.lengtoo.impress.web.struts1.action.ShowLengtooCardList">
-		<property name="service" ref="lengtooService"></property>
+		<property name="service" ref="cardService"></property>
+	</bean>
+	<bean name="/lengtoowallpaperlist" class="com.lengtoo.impress.web.struts1.action.ShowLengtooWallpaperList">
+		<property name="service" ref="wallpaperService"></property>
 	</bean>
 </beans>
