@@ -35,7 +35,7 @@ public interface ILengtooWallpaperDao {
 	 * 
 	 * @date 2014-07-22
 	 */
-	List<Map> getAllWallpaperMesg(String date);
+	List<Map> getAllWallpaperMesg(Map paramsMap);
 
 	/**
 	 * 

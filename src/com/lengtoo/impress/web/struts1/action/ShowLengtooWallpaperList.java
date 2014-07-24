@@ -53,6 +53,9 @@ public class ShowLengtooWallpaperList extends Action{
 			throws Exception {
 		Map result = new HashMap();
 		Map paramsMap = new HashMap();
+		boolean success = false;
+		int msg = 0;
+		boolean isOk = false;
 		boolean refresh = Boolean.parseBoolean(request.getParameter("refresh"));
 		String date = null;
 		if(refresh) {
@@ -61,19 +64,42 @@ public class ShowLengtooWallpaperList extends Action{
 		}else {
 			date = request.getParameter("date");
 		}
-		paramsMap.put(date, date);
-		//paramsMap.put("refresh", refresh);
-		List<Map> list =  service.getAllWallpaperMesg(date);
-		for (Map m: list) {
-			String bStr = (String) m.get("Big_imgurl");
-			String sStr = (String) m.get("Small_imgurl");
-			m.put("Big_imgurl", url + bStr); 
-			m.put("Small_imgurl", url + sStr); 
+		int limit;
+		try {
+			limit = Integer.parseInt(request.getParameter("limit"));
+		} catch (Exception e) {
+			limit = 10;
 		}
-		result.put("lengtoocardlist", list);
-		Gson g = new Gson();
-		String json = g.toJson(list);
-		ReturnData.returnData(response, result);
+		if(limit>20 || limit<0) {
+			limit = 10;
+		}
+		paramsMap.put("date", date);
+		paramsMap.put("limit", limit);
+		//paramsMap.put("refresh", refresh);
+		List<Map> list;
+		try {
+			list = service.getAllWallpaperMesg(paramsMap);
+			for (Map m: list) {
+				String bStr = (String) m.get("Big_imgurl");
+				String sStr = (String) m.get("Small_imgurl");
+				m.put("Big_imgurl", url + bStr); 
+				m.put("Small_imgurl", url + sStr); 
+			}
+			isOk = true;
+			if(list.size() !=0) {
+				success = true;
+				msg = 11;//success
+			}else {
+				success = true;
+				msg = 12;//数据为空
+			}
+			result.put("lengtoowallpaperlist", list);
+			Gson g = new Gson();
+			String json = g.toJson(list);
+		} catch (Exception e) {
+			msg = 2;
+		}
+		ReturnData.returnData(response, result, success, msg);
 		return null;
 	}
 

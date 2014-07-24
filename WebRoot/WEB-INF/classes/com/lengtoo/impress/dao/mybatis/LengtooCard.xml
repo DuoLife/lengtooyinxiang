@@ -13,8 +13,8 @@
  		#{and_height}, #{origin_x}, #{origin_y}, #{width}, #{height}, #{default_text}, #{upload_ip}, #{createdate}, #{origin_width}, 
  		#{origin_height}, #{small_width}, #{small_height}, #{and_origin_width}, #{and_origin_height});
  	</insert>
- 	<select id="selectAll" parameterType="String" resultType="LengtooCard">
- 		select * from lengtoo_card where createdate &lt; #{createdate} order by createdate desc limit 20
+ 	<select id="selectAll" parameterType="Map" resultType="LengtooCard">
+ 		select * from lengtoo_card where createdate &lt; #{date} order by createdate desc limit #{limit}
  	</select>
  </mapper>
  

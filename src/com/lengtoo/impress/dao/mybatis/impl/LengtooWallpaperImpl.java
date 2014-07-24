@@ -33,18 +33,23 @@ import com.lengtoo.impress.dao.po.LengtooWallpaper;
 public class LengtooWallpaperImpl extends SqlSessionDaoSupport implements ILengtooWallpaperDao{
 
 	public Map addLengtooWallpaper(LengtooWallpaper lengtooWallpaper) {
-		
+		int isOk = getSqlSession().insert("LengtooWallpaper.insertOne", lengtooWallpaper);
 		return null;
 	}
 	
-	public List<Map> getAllWallpaperMesg(String date) {
+	public List<Map> getAllWallpaperMesg(Map paramsMap) {
+		String date = (String) paramsMap.get("date");
+		int limit = (Integer) paramsMap.get("limit");
 		List result = new ArrayList();
-		List<LengtooWallpaper> list = getSqlSession().selectList("LengtooWallpaper.selectAll", date);
+		List<LengtooWallpaper> list = getSqlSession().selectList("LengtooWallpaper.selectAll", paramsMap);
 		for(LengtooWallpaper lw: list) {
 			Map map = new HashMap();
-			map.put("mapid", lw.getWallpaperid());
+			map.put("Wallpaperid", lw.getWallpaperid());
 			map.put("Width", lw.getWidth());
-			map.put("Default_text", lw.getDefault_text());
+			map.put("Height", lw.getHeight());
+			map.put("Small_width", lw.getSmall_width());
+			map.put("Small_height", lw.getSmall_height());
+			//map.put("Default_text", lw.getDefault_text());
 			map.put("Small_imgurl", lw.getSmall_imgurl());
 			map.put("Big_imgurl", lw.getBig_imgurl());
 			//map.put("Upload_ip", lw.getUpload_ip());

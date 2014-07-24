@@ -35,7 +35,7 @@ public interface ILengtooCardDao {
 	 * 
 	 * @date 2014-6-27
 	 */
-	List<Map> getAllCardMesg(String date);
+	List<Map> getAllCardMesg(Map paramsMap);
 	
 	/**
 	 * 

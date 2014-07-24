@@ -36,9 +36,11 @@ public class LengtooCardImpl extends SqlSessionDaoSupport implements ILengtooCar
 	 * @see com.lengtoo.impress.dao.ILengtooCardDao#getAllCardMesg(java.lang.String)
 	 */
 
-	public List<Map> getAllCardMesg(String date) {
+	public List<Map> getAllCardMesg(Map paramsMap) {
+		String date = (String) paramsMap.get("date");
+		int limit = (Integer) paramsMap.get("limit");
 		List result = new ArrayList();
-		List<LengtooCard> list = getSqlSession().selectList("LengtooCard.selectAll", date);
+		List<LengtooCard> list = getSqlSession().selectList("LengtooCard.selectAll", paramsMap);
 		for(LengtooCard c: list) {
 			Map card = new HashMap();
 			card.put("Cardid", c.getCardid());
@@ -49,12 +51,12 @@ public class LengtooCardImpl extends SqlSessionDaoSupport implements ILengtooCar
 			card.put("Origin_width", c.getOrigin_width());
 			card.put("Origin_height", c.getOrigin_height());
 			card.put("Default_text", c.getDefault_text());
-			card.put("And_width", c.getAnd_width());
-			card.put("And_height", c.getAnd_height());
-			card.put("And_origin_x", c.getAnd_origin_x());
-			card.put("And_origin_y", c.getAnd_origin_y());
-			card.put("And_origin_width", c.getAnd_origin_width());
-			card.put("And_origin_height", c.getAnd_origin_height());
+//			card.put("And_width", c.getAnd_width());
+//			card.put("And_height", c.getAnd_height());
+//			card.put("And_origin_x", c.getAnd_origin_x());
+//			card.put("And_origin_y", c.getAnd_origin_y());
+//			card.put("And_origin_width", c.getAnd_origin_width());
+//			card.put("And_origin_height", c.getAnd_origin_height());
 			card.put("Small_imgurl", c.getSmall_imgurl());
 			card.put("Big_imgurl", c.getBig_imgurl());
 			//card.put("Upload_ip", c.getUpload_ip());

@@ -31,8 +31,8 @@ public class LengtooCardServiceImpl implements ILengtooCardService{
 		this.dao = dao;
 	}
 
-	public List<Map> getAllCardMesg(String date) {
-		return dao.getAllCardMesg(date);
+	public List<Map> getAllCardMesg(Map paramsMap) {
+		return dao.getAllCardMesg(paramsMap);
 	}
 
 }

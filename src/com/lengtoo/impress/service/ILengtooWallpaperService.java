@@ -33,6 +33,6 @@ public interface ILengtooWallpaperService {
 	 * 
 	 * @date 2014-6-27
 	 */
-	List<Map> getAllWallpaperMesg(String date);
+	List<Map> getAllWallpaperMesg(Map paramsMap);
 	
 }

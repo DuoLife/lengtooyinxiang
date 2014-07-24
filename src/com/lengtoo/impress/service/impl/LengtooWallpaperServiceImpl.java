@@ -31,8 +31,8 @@ public class LengtooWallpaperServiceImpl implements ILengtooWallpaperService{
 		this.dao = dao;
 	}
 
-	public List<Map> getAllWallpaperMesg(String date) {
-		return dao.getAllWallpaperMesg(date);
+	public List<Map> getAllWallpaperMesg(Map paramsMap) {
+		return dao.getAllWallpaperMesg(paramsMap);
 	}
 
 }
