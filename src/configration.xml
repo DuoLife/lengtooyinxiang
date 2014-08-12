@@ -8,6 +8,7 @@
 	<typeAliases>
 		<typeAlias type="com.lengtoo.impress.dao.po.LengtooCard" alias="LengtooCard"/>
 		<typeAlias type="com.lengtoo.impress.dao.po.LengtooWallpaper" alias="LengtooWallpaper"/>
+		<typeAlias type="com.lengtoo.game.dao.po.LengtooGame" alias="LengtooGame"/>
 	</typeAliases>
 	
 	<environments default="db">
@@ -25,6 +26,7 @@
 	<mappers>
 		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooCard.xml"/>
 		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooWallpaper.xml"/>
+		<mapper resource="com/lengtoo/game/dao/mybatis/LengtooGame.xml"/>
 	</mappers>
 	
 </configuration>

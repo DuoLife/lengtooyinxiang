@@ -36,21 +36,21 @@ public class TestMybatis_spring {
 	private static ILengtooWallpaperDao wdao;
 	
 	public static void main(String[] args) {
-		int[] aH = {1,1,2,2,1,2,1,1,2,1,1,2,1,1,2,2,1,1,2,1};
-		//System.out.println(aH.length);
-		for(int i=0; i<=17; i++) {
+		int[] aH = {1,1,2,2,1,1,1,1,2,2,2,1,1,1,1,1,2,1,1,1};
+//		System.out.println(aH.length);
+		for(int i=43; i<=44; i++) {
 //			String s = i + ".jpg";
 //			int y = 0;
 //			if(i<10) {
 //				s = "0" + i + ".jpg";
 //			}
-//			if(aH[i-1]==1) {
+//			if(aH[i-21]==1) {
 //				y=50;
 //			}else {
 //				y=110;
 //			}
 //			System.out.println(y);
-			//addLengtooCard( y, s);  //添加冷兔card信息
+//			addLengtooCard( y, s);  //添加冷兔card信息
 			addLengtooWallpaper(i + ".jpg");
 			try {
 				Thread.sleep(10000);
