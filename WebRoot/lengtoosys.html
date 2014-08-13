@@ -6,20 +6,32 @@
 <title>冷兔实验室</title>
 <style>
 	* {margin: 0; padding: 0;}
-	.content {width: 320px;margin: 0 auto;}
-	.content img{width: 320px;margin: 0 auto;}
+	.content {width: 960px;margin: 0 auto; position: relative;}
+	.content img{width: 960px;margin: 0 auto;}
+	.downBtn1, .downBtn2 {background:url('img/down_0.png');display:block; width: 192px; height: 50px; color:#FFF; text-decoration: none; font-size: 24px; line-height: 50px;text-align: center;}
+	.downBtn1:hover, .downBtn2:hover {background:url('img/down_1.png');}
+	.downBtn1 { position: absolute; left:82px;top:320px;}
+	.downBtn2 { position: absolute; left:382px;top:320px;}
 </style>
+<script>
+	window.onload = function () {
+		var oBtn = document.getElementById('iosBtn');
+		oBtn.onclick = function () {
+			alert("即将上线，敬请期待！");
+		};
+	};
+</script>
 </head>
 
 <body>
 <div class="wrapper">
 	<div class="content">
-    	<img src="download.png"/>
+    	<img src="img/download.jpg"/>
+    	<a class="downBtn1" href="impression-release-offical.apk">Android下载</a>
+    	<a id="iosBtn" class="downBtn2" href="#">iOS下载</a>
     </div>
 </div>
-<script>/*
-	alert(window.screen.width);
-	document.body.style.zoom = window.screen.width / 320;*/
+<script>
 </script>
 </body>
 </html>
