@@ -6,10 +6,20 @@
   <global-exceptions />
   <global-forwards />
   <action-mappings>
+<!-- app -->
   	<action path="/lengtoocardlist" type="com.lengtoo.impress.web.action.ShowCardList"></action>
   	<action path="/lengtoowallpaperlist" type="com.lengtoo.impress.web.action.ShowLengtooWallpaperList"></action>
   	<action path="/gamerankinglist" type="com.lengtoo.game.web.action.ShowGameRankingList"></action>
   	<action path="/addgameranking" type="com.lengtoo.game.web.action.AddLengtooGameRanking"></action>
+<!-- web admin -->
+	<!-- card -->
+  	<action path="/web/lengtoocardlist" type="com.lengtoo.impress.web.action.web.card.ShowCardList"></action>
+  	<action path="/web/updatecardonshow" type="com.lengtoo.impress.web.struts1.action.web.card.UpdateLengtooCardOnShow"></action>
+  	<action path="/web/deletecard" type="com.lengtoo.impress.web.struts1.action.web.card.DeleteLengtooCard"></action>
+	<!-- wallpaper -->
+  	<action path="/web/lengtoowallpaperlist" type="com.lengtoo.impress.web.action.web.wallpaper.ShowLengtooWallpaperList"></action>
+  	<action path="/web/updatewponshow" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.UpdateLengtooWallpaperOnShow"></action>
+  	<action path="/web/deletewp" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.DeleteLengtooWallpaper"></action>
   </action-mappings>
   
   <controller>

@@ -3,15 +3,25 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="LengtooWallpaper">
+ <!-- app -->
+	<select id="selectAll" parameterType="Map" resultType="LengtooWallpaper">
+		select * from lengtoo_bizhi where createdate &lt; #{date} and onshow = 1 order by createdate desc limit #{limit}
+	</select>
+ <!-- web -->
 	<insert id="insertOne" parameterType="LengtooWallpaper">
 		<selectKey resultType="int" keyProperty="wallpaperid">
 			select last_insert_id();
 		</selectKey>
-		insert into lengtoo_bizhi (big_imgurl, small_imgurl, width, height, default_text, upload_ip, createdate, small_width, small_height) 
-		values(#{big_imgurl}, #{small_imgurl}, #{width}, #{height}, #{default_text}, #{upload_ip}, #{createdate}, 
- 		 #{small_width}, #{small_height});
+		insert into lengtoo_bizhi (big_imgurl, small_imgurl, width, height, default_text, upload_ip, createdate, small_width, small_height, ontop, onshow) 
+		values(#{big_imgurl}, #{small_imgurl}, #{width}, #{height}, #{default_text}, #{upload_ip}, #{createdate}, #{small_width}, #{small_height}, #{ontop}, #{onshow});
 	</insert>
-	<select id="selectAll" parameterType="Map" resultType="LengtooWallpaper">
+	<select id="selectAllWeb" parameterType="Map" resultType="LengtooWallpaper">
 		select * from lengtoo_bizhi where createdate &lt; #{date} order by createdate desc limit #{limit}
 	</select>
+	<update id="updateShow" parameterType="Map">
+ 		update lengtoo_bizhi set onshow = #{onshow} where wallpaperid = #{wallpaperid};
+ 	</update>
+ 	<delete id="deleteWallpaper" parameterType="Map">
+ 		delete from lengtoo_bizhi where wallpaperid = #{wallpaperid};
+ 	</delete>
 </mapper>

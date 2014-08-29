@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>冷兔实验室-壁纸</title>
+<style>
+* {margin: 0; padding: 0; font-family: Microsoft YaHei;}
+#wrap_header {width: 100%; height: 64px;background: #E0F2FF;}
+header {width: 1000px; height: 64px; margin: 0 auto; position: relative;}
+#logo {}
+#logo img{position: absolute; left: 4px; top: 10px;}
+#logo #logo_title {position: absolute; left: 40px; bottom: 16px; font-size:24px;}
+#logo #logo_version {position: absolute; left: 170px; bottom: 14px; font-size:12px; color: #A3B5C3;}
+
+nav {position: absolute; left: 330px; line-height: 64px; text-align: center;}
+nav li{width: 88px;float: left; list-style: none; font-size:24px;}
+nav li:hover, .active  {background: #829BD1;}
+
+#upload_div {width: 120px; height: 64px;position: absolute; right: 10px; font-size: 16px;}
+#upload_div a{display: block; width: 100px; height: 46px; line-height: 46px;margin-top: 8px; background: url('img/upload0.png') 0 center no-repeat; text-align: right; text-decoration: none; color: #666;}
+#upload_div a:hover {background: url('img/upload1.png') 0 center no-repeat; color: #A3B5C3;}
+/* common */
+.hidden { display: none;}
+.block {display: block;}
+.card .claer {claer: both;}
+/*content*/
+#content {width: 1000px; margin: 20px auto;}
+.card { width: 320px; padding: 6px; border: #666 solid 1px; position: relative;}
+.card img { width: 320px; height: 280px;}
+.card .onshow { float: left; width: 56px; line-height: 28px; background: url(img/onshow0.png) 0 center no-repeat; text-align:right;}
+.card .delete { margin-left: 20px;float: left; width: 56px; line-height: 28px; background:url(img/delete0.png) 0 center no-repeat; text-align:right;}
+.card .card_date {line-height: 28px;float: right;}
+</style>
+</head>
+
+<body>
+<div id="wrap_header">
+    <header>
+        <div id="logo">
+            <img src="img/logo.png"/>
+            <p id="logo_title">冷兔实验室</p>
+            <p id="logo_version">后台管理系统V1.0</p>
+        </div>
+        <nav>
+            <li class="active">壁纸</li>
+            <li>卡片</li>
+        </nav>
+        <div id="upload_div">
+            <a href="#">
+                <p>上传素材</p>
+            </a>
+        </div>
+    </header>
+</div>
+<div id="content">
+	<div class="card">
+    	<img src="../img/bizhi/0.jpg"/>
+        <div class="">
+            <a class="block onshow">隐藏</a>
+            <a class="block delete">删除</a>
+        	<p class="card_date">2014年8月29日</p>
+            <p class="clear"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
