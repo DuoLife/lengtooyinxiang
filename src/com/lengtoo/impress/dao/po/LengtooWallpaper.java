@@ -34,6 +34,20 @@ private static final long serialVersionUID = 201406241657L;
 	private String default_text;
 	private String upload_ip;
 	private Date createdate;
+	private int ontop;
+	private int onshow;
+	public int getOntop() {
+		return ontop;
+	}
+	public void setOntop(int ontop) {
+		this.ontop = ontop;
+	}
+	public int getOnshow() {
+		return onshow;
+	}
+	public void setOnshow(int onshow) {
+		this.onshow = onshow;
+	}
 	public int getWallpaperid() {
 		return wallpaperid;
 	}
@@ -95,25 +109,26 @@ private static final long serialVersionUID = 201406241657L;
 		this.createdate = createdate;
 	}
 	
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
 				+ ((big_imgurl == null) ? 0 : big_imgurl.hashCode());
-		result = prime * result + wallpaperid;
 		result = prime * result
 				+ ((createdate == null) ? 0 : createdate.hashCode());
 		result = prime * result
 				+ ((default_text == null) ? 0 : default_text.hashCode());
 		result = prime * result + height;
+		result = prime * result + onshow;
+		result = prime * result + ontop;
 		result = prime * result + small_height;
 		result = prime * result
 				+ ((small_imgurl == null) ? 0 : small_imgurl.hashCode());
 		result = prime * result + small_width;
 		result = prime * result
 				+ ((upload_ip == null) ? 0 : upload_ip.hashCode());
+		result = prime * result + wallpaperid;
 		result = prime * result + width;
 		return result;
 	}
@@ -131,8 +146,6 @@ private static final long serialVersionUID = 201406241657L;
 				return false;
 		} else if (!big_imgurl.equals(other.big_imgurl))
 			return false;
-		if (wallpaperid != other.wallpaperid)
-			return false;
 		if (createdate == null) {
 			if (other.createdate != null)
 				return false;
@@ -144,6 +157,10 @@ private static final long serialVersionUID = 201406241657L;
 		} else if (!default_text.equals(other.default_text))
 			return false;
 		if (height != other.height)
+			return false;
+		if (onshow != other.onshow)
+			return false;
+		if (ontop != other.ontop)
 			return false;
 		if (small_height != other.small_height)
 			return false;
@@ -159,19 +176,44 @@ private static final long serialVersionUID = 201406241657L;
 				return false;
 		} else if (!upload_ip.equals(other.upload_ip))
 			return false;
+		if (wallpaperid != other.wallpaperid)
+			return false;
 		if (width != other.width)
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "LengtooWallpaper [big_imgurl=" + big_imgurl + ", wallpaperid="
-				+ wallpaperid + ", createdate=" + createdate + ", default_text="
-				+ default_text + ", height=" + height + ", small_height="
-				+ small_height + ", small_imgurl=" + small_imgurl
-				+ ", small_width=" + small_width + ", upload_ip=" + upload_ip
+		return "LengtooWallpaper [big_imgurl=" + big_imgurl + ", createdate="
+				+ createdate + ", default_text=" + default_text + ", height="
+				+ height + ", onshow=" + onshow + ", ontop=" + ontop
+				+ ", small_height=" + small_height + ", small_imgurl="
+				+ small_imgurl + ", small_width=" + small_width
+				+ ", upload_ip=" + upload_ip + ", wallpaperid=" + wallpaperid
 				+ ", width=" + width + "]";
 	}
+	
+	public LengtooWallpaper() {
+	}
+	public LengtooWallpaper(int wallpaperid, String bigImgurl,
+			String smallImgurl, int width, int height, int smallWidth,
+			int smallHeight, String defaultText, String uploadIp,
+			Date createdate, int ontop, int onshow) {
+		super();
+		this.wallpaperid = wallpaperid;
+		big_imgurl = bigImgurl;
+		small_imgurl = smallImgurl;
+		this.width = width;
+		this.height = height;
+		small_width = smallWidth;
+		small_height = smallHeight;
+		default_text = defaultText;
+		upload_ip = uploadIp;
+		this.createdate = createdate;
+		this.ontop = ontop;
+		this.onshow = onshow;
+	}
+	
 	
 	
 }

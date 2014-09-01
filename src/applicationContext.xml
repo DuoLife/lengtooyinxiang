@@ -56,4 +56,25 @@
 	<bean name="/addgameranking" class="com.lengtoo.game.web.action.AddLengtooGameRanking">
 		<property name="service" ref="gameService"></property>
 	</bean>
+<!-- web admin -->
+	<!-- card -->
+	<bean name="/web/lengtoocardlist" class="com.lengtoo.impress.web.struts1.action.web.card.ShowLengtooCardList_web">
+		<property name="service" ref="cardService"></property>
+	</bean>
+	<bean name="/web/updatecardonshow" class="com.lengtoo.impress.web.struts1.action.web.card.UpdateLengtooCardOnShow">
+		<property name="service" ref="cardService"></property>
+	</bean>
+	<bean name="/web/deletecard" class="com.lengtoo.impress.web.struts1.action.web.card.DeleteLengtooCard">
+		<property name="service" ref="cardService"></property>
+	</bean>
+	<!-- wallpaper -->
+	<bean name="/web/lengtoowallpaperlist" class="com.lengtoo.impress.web.struts1.action.web.wallpaper.ShowLengtooWallpaperList_web">
+		<property name="service" ref="wallpaperService"></property>
+	</bean>
+	<bean name="/web/updatewponshow" class="com.lengtoo.impress.web.struts1.action.web.wallpaper.UpdateLengtooWallpaperOnShow">
+		<property name="service" ref="wallpaperService"></property>
+	</bean>
+	<bean name="/web/deletewp" class="com.lengtoo.impress.web.struts1.action.web.wallpaper.DeleteLengtooWallpaper">
+		<property name="service" ref="wallpaperService"></property>
+	</bean>
 </beans>

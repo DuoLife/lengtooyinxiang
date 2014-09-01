@@ -36,22 +36,22 @@ public class TestMybatis_spring {
 	private static ILengtooWallpaperDao wdao;
 	
 	public static void main(String[] args) {
-		int[] aH = {1,1,2,2,1,1,1,1,2,2,2,1,1,1,1,1,2,1,1,1};
+		int[] aH = {1,1,2,2,1,2,1,1,2,1,1,2,1,1,2,2,1,1,2,1,1,1,2,2,1,1,1,1,2,2,2,1,1,1,1,1,2,1,1,1};
 //		System.out.println(aH.length);
-		for(int i=43; i<=44; i++) {
-//			String s = i + ".jpg";
-//			int y = 0;
-//			if(i<10) {
-//				s = "0" + i + ".jpg";
-//			}
-//			if(aH[i-21]==1) {
-//				y=50;
-//			}else {
-//				y=110;
-//			}
-//			System.out.println(y);
-//			addLengtooCard( y, s);  //添加冷兔card信息
-			addLengtooWallpaper(i + ".jpg");
+		for(int i=0; i<=40; i++) {
+			String s = i + ".jpg";
+			int y = 0;
+			if(i<10) {
+				s = "0" + i + ".jpg";
+			}
+			if(aH[i]==1) {
+				y=50;
+			}else {
+				y=110;
+			}
+			System.out.println(y);
+			addLengtooCard( y, s);  //添加冷兔card信息
+			//addLengtooWallpaper(i + ".jpg");
 			try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {
@@ -81,6 +81,8 @@ public class TestMybatis_spring {
 		String bigImgurl = "/img/card/"+imgName;
 		String uploadIp = "127.0.0.1";
 		String defaultText = "把祝福送给你的小伙伴吧";
+		int ontop = 0;
+		int onshow = 1;
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(path);
 		dao = (ILengtooCardDao) context.getBean("cardDao");
@@ -105,6 +107,8 @@ public class TestMybatis_spring {
 		lengtooCard.setSmall_width(smallWidth);
 		lengtooCard.setUpload_ip(uploadIp);
 		lengtooCard.setWidth(width);
+		lengtooCard.setOnshow(onshow);
+		lengtooCard.setOntop(ontop);
 		
 		dao.addLengtooCard(lengtooCard);
 //		List<Map> l = dao.getAllCardMesg("");
@@ -119,6 +123,8 @@ public class TestMybatis_spring {
 		int height = 1280;
 		int smallWidth = 320;
 		int smallHeight = 284;
+		int ontop = 0;
+		int onshow = 1;
 		String smallImgurl = "/img/bizhi/small_"+imgName;
 		String bigImgurl = "/img/bizhi/"+imgName;
 		String uploadIp = "127.0.0.1";
@@ -137,6 +143,8 @@ public class TestMybatis_spring {
 		lengtooWallpaper.setSmall_width(smallWidth);
 		lengtooWallpaper.setUpload_ip(uploadIp);
 		lengtooWallpaper.setWidth(width);
+		lengtooWallpaper.setOnshow(onshow);
+		lengtooWallpaper.setOntop(ontop);
 		
 		wdao.addLengtooWallpaper(lengtooWallpaper);
 	}

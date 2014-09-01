@@ -4,14 +4,16 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
  
  <mapper namespace="LengtooGame">
+ <!-- app -->
+ 	<select id="selectAll" parameterType="Map" resultType="LengtooGame">
+ 		select * from lengtoo_game order by score desc limit #{limit}
+ 	</select>
+ <!-- web -->
  	<insert id="insertOne" parameterType="LengtooGame">
 	 	<selectKey resultType="long" keyProperty="userid"> 
 	 		select last_insert_id();
 	 	</selectKey>
  		insert into lengtoo_game (userid, username, declaration, date, score) values (#{userid}, #{username}, #{declaration}, #{date}, #{score});
  	</insert>
- 	<select id="selectAll" parameterType="Map" resultType="LengtooGame">
- 		select * from lengtoo_game order by score desc limit #{limit}
- 	</select>
  </mapper>
  

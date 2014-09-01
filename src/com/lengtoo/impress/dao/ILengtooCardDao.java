@@ -48,4 +48,39 @@ public interface ILengtooCardDao {
 	 * @date 2014-7-4
 	 */
 	Map addLengtooCard(LengtooCard lengtooCard);
+
+	/**
+	 * @author xuming
+	 * 
+	 * @param 最后一张图片的上传日期
+	 * 
+	 * @return web端list<Map>结构的冷兔card信息
+	 * 
+	 * @date 2014-8-29
+	 */
+	List<Map> getAllCardMesg_Web(Map paramsMap);
+	
+	/**
+	 * 
+	 * @author xuming
+	 * 
+	 * @param onshow: 1(显示),0(隐藏); cardid: 变更项的id。
+	 * 
+	 * @return 操作状态码，成功与否
+	 * 
+	 * @date 2014-08-29
+	 */
+	Map updateCardOnshow_web(Map map);
+	
+	/**
+	 * 
+	 * @author xuming
+	 * 
+	 * @param cardid: 删除项的id。
+	 * 
+	 * @return 操作状态码，成功与否
+	 * 
+	 * @date 2014-08-29
+	 */
+	Map deleteCard_web(Map map);
 }
