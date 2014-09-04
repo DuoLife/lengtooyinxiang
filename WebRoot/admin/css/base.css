@@ -20,8 +20,17 @@ nav li:hover, .active  {background: #829BD1; color: #FFF;}
 #upload_div a{display: block; width: 100px; height: 46px; line-height: 46px;margin-top: 8px; background: url('/lengtooyinxiang/admin/img/upload0.png') 0 center no-repeat; text-align: right; text-decoration: none; color: #666;}
 #upload_div a:hover {background: url('/lengtooyinxiang/admin/img/upload1.png') 0 center no-repeat; color: #A3B5C3;}
 /* common */
+a {color: #999;}
 .hidden { display: none;}
 .block {display: block;}
 .clear {clear: both;}
 /*content*/
 #content {width: 1000px; margin: 20px auto; position: relative;padding-bottom: 60px;}
+
+/*move*/
+.grid{
+-webkit-transition: top 1s ease, left 1s ease;
+-moz-transition: top 1s ease, left 1s ease;
+-o-transition: top 1s ease, left 1s ease;
+-ms-transition: top 1s ease, left 1s ease;
+}

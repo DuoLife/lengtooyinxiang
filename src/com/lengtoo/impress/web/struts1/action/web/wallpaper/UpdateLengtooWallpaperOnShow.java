@@ -56,6 +56,7 @@ public class UpdateLengtooWallpaperOnShow extends Action{
 			wallpaperid = 0;
 			onshow = 0;
 		}
+		//System.out.println(wallpaperid);
 		paramsMap.put("wallpaperid", wallpaperid);
 		paramsMap.put("onshow", onshow);
 		try {

@@ -16,6 +16,7 @@ function AJAX (method, url, paramStr, fnSucceed, fnfail) {
 				var json = eval('(' + oAjax.responseText + ')');
 				fnSucceed && fnSucceed(json);
 			}else {
+				alert('网络异常，请检测您的网络设置！');
 				fnfail && fnail(status);
 			}
 		}

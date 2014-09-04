@@ -56,6 +56,7 @@ public class DeleteLengtooCard extends Action{
 		} catch (Exception e) {
 			cardid = 0;
 		}
+		//System.out.println(cardid);
 		paramsMap.put("cardid", cardid);
 		try {
 			Map m =  service.deleteCard_web(paramsMap);

@@ -66,10 +66,10 @@ public class ShowLengtooCardList_web extends Action{
 		try {
 			limit = Integer.parseInt(request.getParameter("limit"));
 		} catch (Exception e) {
-			limit = 10;
+			limit = 30;
 		}
-		if(limit>20 || limit<0) {
-			limit = 10;
+		if(limit>30 || limit<0) {
+			limit = 30;
 		}
 		paramsMap.put("date", date);
 		paramsMap.put("limit", limit);

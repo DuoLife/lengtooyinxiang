@@ -46,13 +46,13 @@ public class DeleteLengtooWallpaper extends Action{
 		Map paramsMap = new HashMap();
 		boolean success = false;
 		int msg = 0;
-		int cardid;
+		int wallpaperid;
 		try {
-			cardid = Integer.parseInt(request.getParameter("wallpaperid"));
+			wallpaperid = Integer.parseInt(request.getParameter("wallpaperid"));
 		} catch (Exception e) {
-			cardid = 0;
+			wallpaperid = 0;
 		}
-		paramsMap.put("cardid", cardid);
+		paramsMap.put("wallpaperid", wallpaperid);
 		try {
 			Map m =  service.deleteWallpaper_web(paramsMap);
 			success = (Integer)m.get("isOk") == 1? true:false;
