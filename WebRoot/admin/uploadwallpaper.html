@@ -15,11 +15,28 @@
 #upload_div a{display: block; width: 100px; height: 46px; line-height: 46px;margin-top: 8px;padding-left: 30px; background: url('/lengtooyinxiang/admin/img/upload0.png') 30px center no-repeat; text-align: center; text-decoration: none; color: #666; border: #06F solid 1px;border-radius: 5px;}
 #upload_div a:hover {background: url('/lengtooyinxiang/admin/img/upload1.png') 30px center no-repeat; color: #A3B5C3;}
 /*upload*/
-#uploadDiv {}
+#uploadImg {width: 1000px; margin: 0 auto;}
+#uploadImg p {margin: 20px 0px 10px; font-size:14px; color: #A3B5C3;}
+#uploadImg .upimg { width: 1000px; height: 250px; border: #B4DEEA 1px solid; position: relative;}
+#uploadImg #img_btn, #uploadImg #smallimg_btn { position: absolute; left: 30px; top: 30px; width: 178px; height: 58px; cursor: pointer; opacity: 0;filter: alpha(opacity=0); z-index: 1;}
+#uploadImg .img_btn, #uploadImg .smallimg_btn { position: absolute; left: 30px; top: 30px; width: 178px; height: 58px; cursor: pointer; border:#B4DEEA 1px dashed; z-index: 0;}
+#uploadImg .addimg {position: absolute; left: 40%; top: 30%; width: 22px;height: 22px; border: #FFF;}
+#uploadImg #show_img, #uploadImg #show_smallimg { position: absolute; right: 300px; top: 14px; width: 250px; height: 220px;}
 </style>
 <script type="text/javascript" src="js/ming.js"></script>
 <script>
-
+window.onload = function () {
+	var img_btn = document.getElementById('img_btn');
+	var smallimg_btn = document.getElementById('smallimg_btn');
+	var oImg = document.getElementById('show_img');
+	var oSmallImg = document.getElementById('show_smallimg');
+	img_btn.onchange = function () {
+		getPath(oImg, img_btn);
+	};
+	smallimg_btn.onchange = function () {
+		getPath(oSmallImg, smallimg_btn);
+	};
+};
 </script>
 </head>
 
@@ -44,7 +61,19 @@
         <a href='uploadcard.html'><li>上传卡片</li></a>
     </div>
 </div>
-<div id="uploadDiv">
+<div id="uploadImg">
+	<p>请上传一张格式 1440*1280px 为 jpg 的图片</p>
+    <div class="upimg">
+    	<input id="img_btn" name="img" type="file" />
+        <div class="img_btn"><img class="addimg" src="img/addimg.png" /></div>
+		<img id="show_img"/>
+    </div>
+    <p>请上传一张格式 320*284px 为 jpg 的缩略图片</p>
+    <div class="upimg">
+    	<input id="smallimg_btn" name="thumbnail" type="file" />
+        <div class="smallimg_btn"><img class="addimg" src="img/addimg.png" /></div>
+		<img id="show_smallimg"/>
+    </div>
 </div>
 </body>
 </html>

@@ -21,4 +21,24 @@ function AJAX (method, url, paramStr, fnSucceed, fnfail) {
 			}
 		}
 	};
-}
+};
+/*
+author: xuming
+date: 2014/09/09
+email: xuming@coldworks.com
+*/
+function getPath(obj,fileQuery){ 
+	if(window.navigator.userAgent.indexOf("MSIE")>=1){ 
+		fileQuery.select(); 
+		var path=document.selection.createRange().text; 
+		obj.removeAttribute("src"); 
+		obj.setAttribute("src",path); 
+	}else { 
+		var file =fileQuery.files[0];  
+		var reader = new FileReader();  
+		reader.onload = function(e){ 
+		obj.setAttribute("src",e.target.result) 
+		} 
+		reader.readAsDataURL(file);  
+	}
+} 
