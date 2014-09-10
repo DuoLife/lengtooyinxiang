@@ -22,6 +22,15 @@
 #uploadImg .img_btn, #uploadImg .smallimg_btn { position: absolute; left: 30px; top: 30px; width: 178px; height: 58px; cursor: pointer; border:#B4DEEA 1px dashed; z-index: 0;}
 #uploadImg .addimg {position: absolute; left: 40%; top: 30%; width: 22px;height: 22px; border: #FFF;}
 #uploadImg #show_img, #uploadImg #show_smallimg { position: absolute; right: 300px; top: 14px; width: 250px; height: 220px;}
+/*content*/
+.content {width: 1000px; margin: 0 auto; position: relative;}
+#uploadImg .input_title{width: 120px; line-height: 20px; position: absolute;font-size: 20px; color: #666;margin: 0; padding: 0;}
+.content .t1{position: absolute;left: 0px; top: 36px;}
+.content .t2{position: absolute;left: 260px; top: 36px;}
+.content .t3{position: absolute;left: 510px; top: 36px;}
+.content .originWH{position: absolute;left: 130px; top: 36px;border: #B4DEEA 1px solid;}
+.content .originsite{position: absolute;left: 380px; top: 36px;border: #B4DEEA 1px solid;}
+.content .default_text{width: 380px;height: 22px; font-size: 18px; position: absolute;right: 0; top: 34px;border: #B4DEEA 1px solid;}
 </style>
 <script type="text/javascript" src="js/ming.js"></script>
 <script>
@@ -75,14 +84,14 @@ window.onload = function () {
 		<img id="show_smallimg"/>
     </div>
     <div class="content">
-        <select class="originWH" name="originWH">
+        <p class="input_title t1">文本框大小</p><select class="originWH" name="originWH">
             <option value="500-800">500*800</option>
         </select>
-        <select class="originsite" name="originsite">
+        <p class="input_title t2">文本框位置</p><select class="originsite" name="originsite">
             <option value="110">60*110</option>
             <option value="50">60*50</option>
         </select>
-        <input type="text" name="default_text" maxlength="100"/> 
+        <p class="input_title t3">默认文本</p><input type="text" class="default_text" name="default_text" maxlength="100" value="把祝福送给你的小伙伴吧"/> 
     </div>
 </div>
 </body>
