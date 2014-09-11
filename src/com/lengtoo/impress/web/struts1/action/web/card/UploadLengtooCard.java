@@ -11,8 +11,10 @@ package com.lengtoo.impress.web.struts1.action.web.card;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +29,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.lengtoo.impress.service.ILengtooCardService;
+
 /**
  * <p>Title: UploadLengtooCard.java</p>
  * <p>Description: </p>
@@ -38,11 +42,17 @@ import org.apache.struts.action.ActionMapping;
  */
 public class UploadLengtooCard extends Action{
 
+	private ILengtooCardService service;
+	public void setService(ILengtooCardService service) {
+		this.service = service;
+	}
+
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 			StringBuffer sf = new StringBuffer();
+			Map map = new HashMap();
 			String originWH = null;  
 			String originsite = null;  
 			String default_text = null;
@@ -117,8 +127,10 @@ public class UploadLengtooCard extends Action{
 				//System.out.println(fileItem.getFieldName()+"    能否获取到上传文件的key呢？？？？");  
 				//判断是原图还是缩略图
 				String isThumbnail = "";
+				boolean isBig = false;
 				if(fileItem.getFieldName().equals("img")) {
 					//原图
+					isBig = true;
 				}else if(fileItem.getFieldName().equals("thumbnail")) {
 					//缩略图
 					isThumbnail = "smallcard/small_";
@@ -167,11 +179,25 @@ public class UploadLengtooCard extends Action{
 						uploadSCardfile.mkdirs();
 					}
 					//数据库 保存文件的"/ImagesUploaded/prefix(服务器端保存名称).t_ext(格式)"
-					String u_name = request.getRealPath("/") + "ImagesUploaded/card/" + isThumbnail + prefix + "." + t_ext; 
+					String relativePath = "ImagesUploaded/card/" + isThumbnail + prefix + "." + t_ext;
+					String u_name = request.getRealPath("/") + relativePath; 
 					//保存数据至本地
-					fileItem.write(new File(u_name));   
+					fileItem.write(new File(u_name));
+					if(isBig) {
+						imgPath = relativePath;
+					}else {
+						smallimgPath = relativePath;
+					}
 				}
 			}
+			//service
+			map.put("originWH", originWH);
+			map.put("originsite", originsite);
+			map.put("imgPath", imgPath);  
+			map.put("smallimgPath", smallimgPath);  
+			map.put("default_text", default_text);
+			//
+			service.addLengtooCard(map);
 		return null;
 	}
 

@@ -42,8 +42,8 @@ public class ShowLengtooCardList_web extends Action{
 	public void setService(ILengtooCardService service) {
 		this.service = service;
 	}
-	private static final String url = "http://lengtucao.com/lengtooyinxiang";
-	//private static final String url = "http://192.168.2.101:2103/lengtooyinxiang";
+	//private static final String url = "http://lengtucao.com/lengtooyinxiang";
+	private static final String url = "http://192.168.2.101:2103/lengtooyinxiang";
 	//Logger log = Logger.getLogger("abc");
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,

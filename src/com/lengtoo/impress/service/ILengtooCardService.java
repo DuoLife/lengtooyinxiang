@@ -40,13 +40,13 @@ public interface ILengtooCardService {
 	 * 
 	 * @author xuming
 	 * 
-	 * @param lengtooCard信息
+	 * @param map信息
 	 * 
 	 * @return 操作状态码，成功与否
 	 * 
 	 * @date 2014-7-4
 	 */
-	Map addLengtooCard(LengtooCard lengtooCard);
+	Map addLengtooCard(Map map);
 
 	/**
 	 * @author xuming

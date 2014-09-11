@@ -68,6 +68,7 @@
 		<property name="service" ref="cardService"></property>
 	</bean>
 	<bean name="/web/uploadlengtoocard" class="com.lengtoo.impress.web.struts1.action.web.card.UploadLengtooCard">
+		<property name="service" ref="cardService"></property>
 	</bean>
 	<!-- wallpaper -->
 	<bean name="/web/lengtoowallpaperlist" class="com.lengtoo.impress.web.struts1.action.web.wallpaper.ShowLengtooWallpaperList_web">
