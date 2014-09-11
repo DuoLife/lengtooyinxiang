@@ -35,6 +35,7 @@
 <script type="text/javascript" src="js/ming.js"></script>
 <script>
 window.onload = function () {
+	var oSubmit = document.getElementById('submit');
 	var img_btn = document.getElementById('img_btn');
 	var smallimg_btn = document.getElementById('smallimg_btn');
 	var oImg = document.getElementById('show_img');
@@ -44,6 +45,10 @@ window.onload = function () {
 	};
 	smallimg_btn.onchange = function () {
 		getPath(oSmallImg, smallimg_btn);
+	};
+	oSubmit.onclick = function () {
+		var oForm = document.upCard;
+		oForm.submit();
 	};
 };
 </script>
@@ -58,7 +63,7 @@ window.onload = function () {
             <p id="logo_version">后台管理系统V1.0</p>
         </div>
         <div id="upload_div">
-            <a href="#">
+            <a id="submit" href="javascript: void(0);">
                 <p>上传</p>
             </a>
         </div>
@@ -70,6 +75,7 @@ window.onload = function () {
         <a href='#'><li class="active_2nav">上传卡片</li></a>
     </div>
 </div>
+<form name="upCard" action="/lengtooyinxiang/web/uploadlengtoocard.do" method="post" enctype="multipart/form-data">
 <div id="uploadImg">
 	<p>请上传一张格式 500*800px 为 jpg 的图片</p>
     <div class="upimg">
@@ -91,8 +97,9 @@ window.onload = function () {
             <option value="110">60*110</option>
             <option value="50">60*50</option>
         </select>
-        <p class="input_title t3">默认文本</p><input type="text" class="default_text" name="default_text" maxlength="100" value="把祝福送给你的小伙伴吧"/> 
+        <p class="input_title t3">默认文本</p><input type="text" class="default_text" name="default_text" maxlength="100" value="把祝福送给你的小伙伴吧"/>
     </div>
 </div>
+</form>
 </body>
 </html>
