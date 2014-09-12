@@ -47,7 +47,7 @@ public interface ILengtooWallpaperService {
 	 * 
 	 * @date 2014-7-22
 	 */
-	Map addLengtooWallpaper(LengtooWallpaper lengtooWallpaper);
+	Map addLengtooWallpaper(Map map);
 
 	/**
 	 * @author xuming

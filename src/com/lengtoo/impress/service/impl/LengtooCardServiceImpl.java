@@ -19,6 +19,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.lengtoo.impress.dao.ILengtooCardDao;
 import com.lengtoo.impress.dao.po.LengtooCard;
 import com.lengtoo.impress.service.ILengtooCardService;
+import com.lengtoo.impress.tools.GetRealIp;
 
 /**
  * <p>Title: LengtooCardServiceImpl.java</p>
@@ -79,6 +80,7 @@ public class LengtooCardServiceImpl implements ILengtooCardService{
 		String imgPath = (String) map.get("imgPath");
 		String smallimgPath = (String) map.get("smallimgPath");
 		String default_text = (String) map.get("default_text");
+		String ip = (String) map.get("ip");
 		//map.get("");
 		int andOriginWidth = 380;
 		int andOriginHeight = 180;
@@ -102,9 +104,9 @@ public class LengtooCardServiceImpl implements ILengtooCardService{
 		int originY = Integer.parseInt(site);
 		int smallWidth = 320;
 		int smallHeight = 512;
-		String smallImgurl = smallimgPath;
 		String bigImgurl = imgPath;
-		String uploadIp = "127.0.0.1";
+		String smallImgurl = smallimgPath;
+		String uploadIp = ip;
 		String defaultText = default_text;//"把祝福送给你的小伙伴吧";
 		int ontop = 0;
 		int onshow = 1;

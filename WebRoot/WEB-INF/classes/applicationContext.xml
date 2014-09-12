@@ -80,4 +80,7 @@
 	<bean name="/web/deletewp" class="com.lengtoo.impress.web.struts1.action.web.wallpaper.DeleteLengtooWallpaper">
 		<property name="service" ref="wallpaperService"></property>
 	</bean>
+	<bean name="/web/uploadlengtoowp" class="com.lengtoo.impress.web.struts1.action.web.wallpaper.UploadLengtooWallpaper">
+		<property name="service" ref="wallpaperService"></property>
+	</bean>
 </beans>

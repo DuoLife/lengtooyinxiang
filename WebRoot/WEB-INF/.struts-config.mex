@@ -7,9 +7,10 @@
   <StrutsActivity path="/web/lengtoocardlist.do" location="50,450" dimension="393,116" />
   <StrutsActivity path="/web/updatecardonshow.do" location="50,850" dimension="464,116" />
   <StrutsActivity path="/web/deletecard.do" location="650,850" dimension="464,116" />
+  <StrutsActivity path="/web/uploadlengtoocard.do" location="50,1050" dimension="563,116" />
   <StrutsActivity path="/web/lengtoowallpaperlist.do" location="650,450" dimension="495,116" />
   <StrutsActivity path="/web/updatewponshow.do" location="50,650" dimension="605,116" />
   <StrutsActivity path="/web/deletewp.do" location="950,650" dimension="642,116" />
-  <StrutsActivity path="/web/uploadlengtoocard.do" location="50,1050" dimension="563,116" />
+  <StrutsActivity path="/web/uploadlengtoowp.do" location="950,1050" dimension="642,116" />
 </FlowViewLayout>
 

@@ -21,6 +21,7 @@
   	<action path="/web/lengtoowallpaperlist" type="com.lengtoo.impress.web.action.web.wallpaper.ShowLengtooWallpaperList"></action>
   	<action path="/web/updatewponshow" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.UpdateLengtooWallpaperOnShow"></action>
   	<action path="/web/deletewp" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.DeleteLengtooWallpaper"></action>
+  	<action path="/web/uploadlengtoowp" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.UploadLengtooWallpaper"></action>
   </action-mappings>
   
   <controller>

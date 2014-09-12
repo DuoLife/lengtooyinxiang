@@ -30,6 +30,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.lengtoo.impress.service.ILengtooCardService;
+import com.lengtoo.impress.tools.GetRealIp;
 
 /**
  * <p>Title: UploadLengtooCard.java</p>
@@ -51,7 +52,6 @@ public class UploadLengtooCard extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-			StringBuffer sf = new StringBuffer();
 			Map map = new HashMap();
 			String originWH = null;  
 			String originsite = null;  
@@ -131,6 +131,7 @@ public class UploadLengtooCard extends Action{
 				if(fileItem.getFieldName().equals("img")) {
 					//原图
 					isBig = true;
+					isThumbnail = "";
 				}else if(fileItem.getFieldName().equals("thumbnail")) {
 					//缩略图
 					isThumbnail = "smallcard/small_";
@@ -184,13 +185,15 @@ public class UploadLengtooCard extends Action{
 					//保存数据至本地
 					fileItem.write(new File(u_name));
 					if(isBig) {
-						imgPath = relativePath;
+						imgPath = "/" + relativePath;
 					}else {
-						smallimgPath = relativePath;
+						smallimgPath = "/" + relativePath;
 					}
 				}
 			}
 			//service
+			String ip = GetRealIp.getIpAddr(request);
+			map.put("ip", ip);
 			map.put("originWH", originWH);
 			map.put("originsite", originsite);
 			map.put("imgPath", imgPath);  
