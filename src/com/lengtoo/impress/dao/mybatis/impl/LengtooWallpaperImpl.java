@@ -86,7 +86,7 @@ public class LengtooWallpaperImpl extends SqlSessionDaoSupport implements ILengt
 			map.put("OnShow", lw.getOnshow());
 			//map.put("Upload_ip", lw.getUpload_ip());
 			Date d = lw.getCreatedate();
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String dStr = sdf.format(d);
 			map.put("Createdate", dStr);
 			result.add(map);

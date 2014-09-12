@@ -25,7 +25,7 @@ a {color: #999;}
 .block {display: block;}
 .clear {clear: both;}
 /*content*/
-#content {width: 1000px; margin: 20px auto; position: relative;padding-bottom: 60px;}
+#content {width: 1032px; margin: 20px auto; position: relative;padding-bottom: 20px;}
 
 /*move*/
 .grid{

@@ -6,7 +6,7 @@
 <title>冷兔实验室-壁纸</title>
 <style>
 /*content*/
-#content {width: 1000px; margin: 20px auto; position: relative;}
+#content {width: 1032px; margin: 20px auto; position: relative;}
 .wallpaper { width: 320px; padding: 6px; position: absolute; background: #FFF; z-index: 1; border:#FFF solid 2px;}
 .wallpaper .text_div {width: 320px; height: 28px;margin-top: 4px; display: none;}
 .wallpaper img { width: 320px; height: 280px;}
@@ -14,11 +14,19 @@
 .wallpaper .onshow { float: left; width: 56px; line-height: 28px; background: url(img/onshow0.png) 0 center no-repeat; text-align:right;}
 .wallpaper .delete { margin-left: 20px;float: left; width: 56px; line-height: 28px; background:url(img/delete0.png) 0 center no-repeat; text-align:right;}
 .wallpaper .wallpaper_date {line-height: 28px;float: right;}
+/*nextpage*/
+.nextDiv {width: 1032px; margin: 20px auto; position: relative; text-align: center;}
+.nextDiv #nextpage {display: block; width: 300px; margin: 20px auto; line-height: 30px; text-decoration: none; background: #B4DEEA; border-radius: 5px;}
 </style>
 <script type="text/javascript" src="js/ming.js"></script>
 <script>
+var date = '';
 window.onload = function () {
-	onloadWallpaper();
+	onloadWallpaper(true, date);
+	var oNextBtn = document.getElementById('nextpage');
+	oNextBtn.onclick = function () {
+		nextPage();
+	};
 };
 
 function getStyle(obj, attr) {
@@ -28,6 +36,7 @@ function setPosition() {
 	var indexZ = 10;
 	var oContent = document.getElementById('content');
 	var aLst = oContent.getElementsByClassName('wallpaper');
+	oContent.style.height = Math.ceil(aLst.length/3)*(290 + 20) + 'px';
 	for(var i=0; i<aLst.length; i++) {
 		aLst[i].style.left = (i%3)*(320 + 16 + 20) + 'px';
 		aLst[i].style.top = Math.floor((i/3))*(290 + 20) + 'px';
@@ -45,12 +54,14 @@ function setPosition() {
 	}
 };
 //onload data
-function onloadWallpaper() {
+function onloadWallpaper(isRefresh, dateStr) {
 	var url = '/lengtooyinxiang/web/lengtoowallpaperlist.do';
-	var paramStr = 'refresh=true';
+	var paramDate = isRefresh ? "": "&date="+dateStr;
+	var paramStr = 'limit=10&refresh=' + isRefresh + paramDate;
 	AJAX('post', url, paramStr, function (data) {
 		if(data.msg == 11) {
 			var wallpaperList = data.lengtoowallpaperlist;
+			date = wallpaperList[wallpaperList.length-1].Createdate;
 			var str = '';
 			for(var i=0; i<wallpaperList.length; i++) {
 				var temp = wallpaperList[i];
@@ -61,10 +72,9 @@ function onloadWallpaper() {
 					str += '<img id="onshowImg" class="isshow_png" src="img/isshow0.png"/><div class="text_div"><a href="javascript:void(0)" onclick="smethod(this, \''+temp.Wallpaperid+'\', \''+temp.OnShow+'\')" class="block onshow">显示</a>';
 				}
 				str += '<a href="javascript:void(0)" onclick="dmethod(this,\''+temp.Wallpaperid+'\')" class="block delete">删除</a><p class="wallpaper_date">' + temp.Createdate + '</p></div></div>';
-			}
+			}	
 			var oContent = document.getElementById('content');
-			oContent.style.height = Math.floor(i/3)*(290 + 20) + 'px';
-			oContent.innerHTML = str;
+			isRefresh ? oContent.innerHTML = str : oContent.innerHTML += str;
 			//元素写入结束，确定元素位置
 			setPosition();
 		}else if(data.msg == 12) {
@@ -116,6 +126,9 @@ function smethod(obj, wallpaperid, onshow) {
 		}
 	});
 }
+function nextPage() {
+	onloadWallpaper(false, date);
+}
 </script>
 </head>
 
@@ -139,6 +152,9 @@ function smethod(obj, wallpaperid, onshow) {
     </header>
 </div>
 <div id="content">
+</div>
+<div class="nextDiv">
+	<a id="nextpage" href="javascript: void(0);">下一页</a>
 </div>
 </body>
 </html>

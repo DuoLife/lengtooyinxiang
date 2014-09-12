@@ -103,7 +103,7 @@ public class LengtooCardImpl extends SqlSessionDaoSupport implements ILengtooCar
 			card.put("OnShow", c.getOnshow());
 			//card.put("Upload_ip", c.getUpload_ip());
 			Date d = c.getCreatedate();
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String dStr = sdf.format(d);
 			card.put("Createdate", dStr);
 			result.add(card);
