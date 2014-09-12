@@ -26,6 +26,7 @@ import org.apache.struts.action.ActionMapping;
 import com.google.gson.Gson;
 import com.lengtoo.impress.returndata.ReturnData;
 import com.lengtoo.impress.service.ILengtooCardService;
+import com.lengtoo.impress.tools.LengtooImgPath;
 
 /**
  * <p>Title: ShowLengtooCardList_web.java</p>
@@ -42,9 +43,8 @@ public class ShowLengtooCardList_web extends Action{
 	public void setService(ILengtooCardService service) {
 		this.service = service;
 	}
-	//private static final String url = "http://lengtucao.com/lengtooyinxiang";
-	private static final String url = "http://localhost:2103/lengtooyinxiang";
-	//Logger log = Logger.getLogger("abc");
+	//获取当前URL前缀
+	String url = LengtooImgPath.getUrl();
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
