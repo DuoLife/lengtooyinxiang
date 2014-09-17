@@ -71,7 +71,7 @@ public class ReturnData {
 		String json = g.toJson(result);
 		//System.out.println(json);
 		try {
-			//return data
+			//return data 
 			response.setContentType("text/html; charset=utf-8");
 			response.getWriter().print(json);
 			response.getWriter().flush();

@@ -27,6 +27,7 @@ import org.apache.struts.action.ActionMapping;
 import com.google.gson.Gson;
 import com.lengtoo.impress.returndata.ReturnData;
 import com.lengtoo.impress.service.ILengtooWallpaperService;
+import com.lengtoo.impress.tools.GetRealIp;
 
 /**
  * <p>Title: ShowLengtooWallpaperList.java</p>
@@ -99,6 +100,8 @@ public class ShowLengtooWallpaperList extends Action{
 		} catch (Exception e) {
 			msg = 2;
 		}
+//		String ip = GetRealIp.getIpAddr(request);
+//		System.out.println(ip);
 		ReturnData.returnData(response, result, success, msg);
 		return null;
 	}
