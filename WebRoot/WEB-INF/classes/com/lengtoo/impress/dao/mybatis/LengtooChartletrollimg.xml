@@ -5,6 +5,6 @@
   <mapper namespace="LengtooChartletrollimg">
   <!-- app -->
   	<select id="selectAll" resultType="LengtooChartletrollimg">
-  		select * from LengtooChartletrollimg where isshow = 1;
+  		select * from LengtooChartletrollimg where isshow = 1 order by createdate desc;
   	</select>
   </mapper>

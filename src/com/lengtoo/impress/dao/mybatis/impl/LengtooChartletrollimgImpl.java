@@ -39,13 +39,13 @@ public class LengtooChartletrollimgImpl extends SqlSessionDaoSupport  implements
 		for(LengtooChartletrollimg c: list) {
 			Map m = new HashMap();
 			m.put("rollimgid", c.getRollimgid());
-			m.put("", c.getRollimgurl());
-			m.put("", c.getImgwidth());
-			m.put("", c.getImgheight());
-			m.put("", c.getTitle());
-			m.put("", c.getDescription());
-			m.put("", c.getType());
-			m.put("", c.getTarget());
+			m.put("rollimgurl", c.getRollimgurl());
+			m.put("imgwidth", c.getImgwidth());
+			m.put("imgheight", c.getImgheight());
+			m.put("title", c.getTitle());
+			m.put("description", c.getDescription());
+			m.put("type", c.getType());
+			m.put("target", c.getTarget());
 			result.add(m);
 		}
 		return result;

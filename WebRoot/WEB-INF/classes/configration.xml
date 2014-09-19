@@ -6,11 +6,13 @@
 	<properties resource="mySql.properties"></properties>
 	
 	<typeAliases>
+	<!-- game -->
+		<typeAlias type="com.lengtoo.game.dao.po.LengtooGame" alias="LengtooGame"/>
+	<!-- impress -->
 		<typeAlias type="com.lengtoo.impress.dao.po.LengtooCard" alias="LengtooCard"/>
 		<typeAlias type="com.lengtoo.impress.dao.po.LengtooWallpaper" alias="LengtooWallpaper"/>
-		<typeAlias type="com.lengtoo.game.dao.po.LengtooGame" alias="LengtooGame"/>
-		<typeAlias type="com.lengtoo.game.dao.po.LengtooChartletrollimg" alias="LengtooChartletrollimg"/>
-		<typeAlias type="com.lengtoo.game.dao.po.LengtooEmojirollimg" alias="LengtooEmojirollimg"/>
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooChartletrollimg" alias="LengtooChartletrollimg"/>
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooEmojirollimg" alias="LengtooEmojirollimg"/>
 	</typeAliases>
 	
 	<environments default="db">
@@ -26,11 +28,13 @@
 	</environments>
 	
 	<mappers>
+	<!-- game -->
+		<mapper resource="com/lengtoo/game/dao/mybatis/LengtooGame.xml"/>
+	<!-- impress -->
 		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooCard.xml"/>
 		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooWallpaper.xml"/>
-		<mapper resource="com/lengtoo/game/dao/mybatis/LengtooGame.xml"/>
-		<mapper resource="com/lengtoo/game/dao/mybatis/LengtooChartletrollimg.xml"/>
-		<mapper resource="com/lengtoo/game/dao/mybatis/LengtooEmojirollimg.xml"/>
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooChartletrollimg.xml"/>
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooEmojirollimg.xml"/>
 	</mappers>
 	
 </configuration>

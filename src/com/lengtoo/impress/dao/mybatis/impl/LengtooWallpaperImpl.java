@@ -40,8 +40,6 @@ public class LengtooWallpaperImpl extends SqlSessionDaoSupport implements ILengt
 	}
 	
 	public List<Map> getAllWallpaperMesg(Map paramsMap) {
-		String date = (String) paramsMap.get("date");
-		int limit = (Integer) paramsMap.get("limit");
 		List result = new ArrayList();
 		List<LengtooWallpaper> list = getSqlSession().selectList("LengtooWallpaper.selectAll", paramsMap);
 		for(LengtooWallpaper lw: list) {

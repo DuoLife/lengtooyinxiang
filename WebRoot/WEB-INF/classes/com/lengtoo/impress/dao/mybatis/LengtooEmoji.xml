@@ -2,9 +2,9 @@
 <!DOCTYPE mapper  
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-  <mapper namespace="LengtooEmojirollimg">
+  <mapper namespace="LengtooAuthor">
   <!-- app -->
-  	<select id="selectAll" resultType="LengtooEmojirollimg">
-  		select * from LengtooEmojirollimg where isshow = 1 order by createdate desc;
+  	<select id="selectAll" resultType="LengtooAuthor">
+  		select * from LengtooAuthor where authorid = ${authorid} and isshow = 1;
   	</select>
   </mapper>

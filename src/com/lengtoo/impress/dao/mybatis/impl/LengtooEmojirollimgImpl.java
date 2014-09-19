@@ -17,7 +17,7 @@ import java.util.Map;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import com.lengtoo.impress.dao.ILengtooEmojirollimgDao;
-import com.lengtoo.impress.dao.po.LengtooChartletrollimg;
+import com.lengtoo.impress.dao.po.LengtooEmojirollimg;
 
 /**
  * <p>Title: LengtooEmojirollimgImpl.java</p>
@@ -35,20 +35,19 @@ public class LengtooEmojirollimgImpl extends SqlSessionDaoSupport implements ILe
 	 */
 	public List<Map> getAllRollimg_client() {
 		List result = new ArrayList();
-		List<LengtooChartletrollimg> list = getSqlSession().selectList("LengtooEmojirollimg.selectAll");
-		for(LengtooChartletrollimg c: list) {
+		List<LengtooEmojirollimg> list = getSqlSession().selectList("LengtooEmojirollimg.selectAll");
+		for(LengtooEmojirollimg e: list) {
 			Map m = new HashMap();
-			m.put("rollimgid", c.getRollimgid());
-			m.put("", c.getRollimgurl());
-			m.put("", c.getImgwidth());
-			m.put("", c.getImgheight());
-			m.put("", c.getTitle());
-			m.put("", c.getDescription());
-			m.put("", c.getType());
-			m.put("", c.getTarget());
+			m.put("rollimgid", e.getRollimgid());
+			m.put("rollimgurl", e.getRollimgurl());
+			m.put("imgwidth", e.getImgwidth());
+			m.put("imgheight", e.getImgheight());
+			m.put("title", e.getTitle());
+			m.put("description", e.getDescription());
+			m.put("type", e.getType());
+			m.put("target", e.getTarget());
 			result.add(m);
 		}
 		return result;
 	}
-
 }

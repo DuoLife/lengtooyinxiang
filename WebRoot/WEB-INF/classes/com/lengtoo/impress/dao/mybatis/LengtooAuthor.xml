@@ -2,9 +2,9 @@
 <!DOCTYPE mapper  
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-  <mapper namespace="LengtooEmojirollimg">
+  <mapper namespace="LengtooEmoji">
   <!-- app -->
-  	<select id="selectAll" resultType="LengtooEmojirollimg">
-  		select * from LengtooEmojirollimg where isshow = 1 order by createdate desc;
+  	<select id="selectById" resultType="LengtooEmoji">
+  		select * from LengtooEmoji where packageid = ${packageid} and isshow = 1 order by createdate desc;
   	</select>
   </mapper>

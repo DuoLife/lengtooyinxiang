@@ -9,13 +9,17 @@
 */
 package com.lengtoo.impress.dao.mybatis.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import com.lengtoo.impress.dao.ILengtooEmojipackageDao;
+import com.lengtoo.impress.dao.po.LengtooEmojipackage;
 
 /**
  * <p>Title: LengtooEmojipackageImpl.java</p>
@@ -33,8 +37,27 @@ public class LengtooEmojipackageImpl extends SqlSessionDaoSupport implements ILe
 	 */
 	public List<Map> getAllEmojipackage_client(Map paramsMap) {
 		List result = new ArrayList();
-		
-		return null;
+		List<LengtooEmojipackage> list = getSqlSession().selectList("LengtooEmojipackage.selectAll", paramsMap);
+		for(LengtooEmojipackage e: list) {
+			Map m = new HashMap();
+			m.put("emojipackageid", e.getEmojipackageid());
+			m.put("title", e.getTitle());
+			m.put("description", e.getDescription());
+			m.put("emojitotal", e.getEmojitotal());
+			m.put("thumbnaiurl", e.getThumbnailurl());
+			m.put("imgwidth", e.getImgwidth());
+			m.put("imgheight", e.getImgheight());
+			m.put("numberofuse", e.getNumberofuse());
+			m.put("authorid", e.getAuthorid());
+			Date d = e.getCreatedate();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String dStr = sdf.format(d);
+			m.put("createdate", dStr);
+			result.add(m);
+//			m.put("", e.get);
+//			m.put("", e.get);
+		}
+		return result;
 	}
 
 }

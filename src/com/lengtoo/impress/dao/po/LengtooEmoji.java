@@ -31,8 +31,8 @@ public class LengtooEmoji implements Serializable{
 	private String description;
 	private Date createdate;
 	private int numberofuse;
-	private int chartletwidth;
-	private int chartletheight;
+	private int emojiwidth;
+	private int emojiheight;
 	private int isshow;
 	private int istop;
 	public int getEmojiid() {
@@ -71,17 +71,17 @@ public class LengtooEmoji implements Serializable{
 	public void setNumberofuse(int numberofuse) {
 		this.numberofuse = numberofuse;
 	}
-	public int getChartletwidth() {
-		return chartletwidth;
+	public int getEmojiwidth() {
+		return emojiwidth;
 	}
-	public void setChartletwidth(int chartletwidth) {
-		this.chartletwidth = chartletwidth;
+	public void setEmojiwidth(int emojiwidth) {
+		this.emojiwidth = emojiwidth;
 	}
-	public int getChartletheight() {
-		return chartletheight;
+	public int getEmojiheight() {
+		return emojiheight;
 	}
-	public void setChartletheight(int chartletheight) {
-		this.chartletheight = chartletheight;
+	public void setEmojiheight(int emojiheight) {
+		this.emojiheight = emojiheight;
 	}
 	public int getIsshow() {
 		return isshow;
@@ -99,27 +99,18 @@ public class LengtooEmoji implements Serializable{
 		return serialVersionUID;
 	}
 	@Override
-	public String toString() {
-		return "LengtooEmoji [chartletheight=" + chartletheight
-				+ ", chartletwidth=" + chartletwidth + ", createdate="
-				+ createdate + ", description=" + description + ", emojiid="
-				+ emojiid + ", emojiurl=" + emojiurl + ", isshow=" + isshow
-				+ ", istop=" + istop + ", numberofuse=" + numberofuse
-				+ ", packageid=" + packageid + "]";
-	}
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + chartletheight;
-		result = prime * result + chartletwidth;
 		result = prime * result
 				+ ((createdate == null) ? 0 : createdate.hashCode());
 		result = prime * result
 				+ ((description == null) ? 0 : description.hashCode());
+		result = prime * result + emojiheight;
 		result = prime * result + emojiid;
 		result = prime * result
 				+ ((emojiurl == null) ? 0 : emojiurl.hashCode());
+		result = prime * result + emojiwidth;
 		result = prime * result + isshow;
 		result = prime * result + istop;
 		result = prime * result + numberofuse;
@@ -135,10 +126,6 @@ public class LengtooEmoji implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		LengtooEmoji other = (LengtooEmoji) obj;
-		if (chartletheight != other.chartletheight)
-			return false;
-		if (chartletwidth != other.chartletwidth)
-			return false;
 		if (createdate == null) {
 			if (other.createdate != null)
 				return false;
@@ -149,12 +136,16 @@ public class LengtooEmoji implements Serializable{
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
+		if (emojiheight != other.emojiheight)
+			return false;
 		if (emojiid != other.emojiid)
 			return false;
 		if (emojiurl == null) {
 			if (other.emojiurl != null)
 				return false;
 		} else if (!emojiurl.equals(other.emojiurl))
+			return false;
+		if (emojiwidth != other.emojiwidth)
 			return false;
 		if (isshow != other.isshow)
 			return false;
@@ -165,6 +156,15 @@ public class LengtooEmoji implements Serializable{
 		if (packageid != other.packageid)
 			return false;
 		return true;
+	}
+	@Override
+	public String toString() {
+		return "LengtooEmoji [createdate=" + createdate + ", description="
+				+ description + ", emojiheight=" + emojiheight + ", emojiid="
+				+ emojiid + ", emojiurl=" + emojiurl + ", emojiwidth="
+				+ emojiwidth + ", isshow=" + isshow + ", istop=" + istop
+				+ ", numberofuse=" + numberofuse + ", packageid=" + packageid
+				+ "]";
 	}
 	
 }
