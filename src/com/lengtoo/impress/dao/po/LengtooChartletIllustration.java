@@ -21,7 +21,7 @@ import java.util.Date;
  * @date 2014-9-17
  * Email: vip6ming@126.com
  */
-public class LengtooIllustration implements Serializable{
+public class LengtooChartletIllustration implements Serializable{
 
 	private static final long serialVersionUID = 201409171720L;
 	
@@ -125,7 +125,7 @@ public class LengtooIllustration implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		LengtooIllustration other = (LengtooIllustration) obj;
+		LengtooChartletIllustration other = (LengtooChartletIllustration) obj;
 		if (createdate == null) {
 			if (other.createdate != null)
 				return false;

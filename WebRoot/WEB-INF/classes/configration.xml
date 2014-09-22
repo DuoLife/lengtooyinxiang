@@ -12,7 +12,17 @@
 		<typeAlias type="com.lengtoo.impress.dao.po.LengtooCard" alias="LengtooCard"/>
 		<typeAlias type="com.lengtoo.impress.dao.po.LengtooWallpaper" alias="LengtooWallpaper"/>
 		<typeAlias type="com.lengtoo.impress.dao.po.LengtooChartletrollimg" alias="LengtooChartletrollimg"/>
+		<!-- emoji -->
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooEmojipackage" alias="LengtooEmojipackage"/>
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooEmoji" alias="LengtooEmoji"/>
 		<typeAlias type="com.lengtoo.impress.dao.po.LengtooEmojirollimg" alias="LengtooEmojirollimg"/>
+		<!-- chartlet -->
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooChartletpackage" alias="LengtooChartletpackage"/>
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooChartlet" alias="LengtooChartlet"/>
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooChartletrollimg" alias="LengtooChartletrollimg"/>
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooChartletIllustration" alias="LengtooChartletIllustration"/>
+		<!-- author -->
+		<typeAlias type="com.lengtoo.impress.dao.po.LengtooAuthor" alias="LengtooAuthor"/>
 	</typeAliases>
 	
 	<environments default="db">
@@ -33,8 +43,17 @@
 	<!-- impress -->
 		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooCard.xml"/>
 		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooWallpaper.xml"/>
-		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooChartletrollimg.xml"/>
+		<!-- emoji -->
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooEmojipackage.xml"/>
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooEmoji.xml"/>
 		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooEmojirollimg.xml"/>
+		<!-- chartlet -->
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooChartletpackage.xml"/>
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooChartlet.xml"/>
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooChartletrollimg.xml"/>
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooChartletIllustration.xml"/>
+		<!-- author -->
+		<mapper resource="com/lengtoo/impress/dao/mybatis/LengtooAuthor.xml"/>
 	</mappers>
 	
 </configuration>

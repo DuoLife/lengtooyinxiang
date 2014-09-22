@@ -38,10 +38,10 @@ public class LengtooChartletImpl extends SqlSessionDaoSupport implements ILengto
 		List<LengtooChartlet> list = getSqlSession().selectList("LengtooChartlet.selectAll");
 		for(LengtooChartlet e: list) {
 			Map m = new HashMap();
-			m.put("emojiid", e.getChartletid());
-			m.put("emojiurl", e.getChartleturl());
-			m.put("emojiwidth", e.getChartletwidth());
-			m.put("emojiheight", e.getChartletheight());
+			m.put("chartletid", e.getChartletid());
+			m.put("chartleturl", e.getChartleturl());
+			m.put("chartletwidth", e.getChartletwidth());
+			m.put("chartletheight", e.getChartletheight());
 			m.put("numberofuse", e.getNumberofuse());
 			result.add(m);
 		}

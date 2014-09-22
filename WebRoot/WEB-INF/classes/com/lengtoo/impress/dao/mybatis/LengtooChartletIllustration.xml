@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+  <mapper namespace="LengtooChartletIllustration">
+  <!-- app -->
+  	<select id="selectAll" resultType="LengtooChartletIllustration">
+  		select * from Lengtoo_ChartletIllustration where packageid = ${packageid} and isshow = 1 order by createdate desc;
+  	</select>
+  </mapper>

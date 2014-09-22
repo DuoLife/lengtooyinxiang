@@ -22,16 +22,12 @@ public class LengtooImgPath {
 
 	private static String url = "http://lengtucao.com/lengtooyinxiang";
 	//http://localhost:2103/lengtooyinxiang
-	static int i = 0;
-	static int j = 0;
 
 	public static String getUrl() {
-		System.out.println("get" + i++);
 		return url;
 	}
 
 	public static void setUrl(String urlStr) {
-		System.out.println("set" + j++);
 		url = urlStr;
 	}
 	

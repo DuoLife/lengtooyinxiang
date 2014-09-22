@@ -5,6 +5,6 @@
   <mapper namespace="LengtooAuthor">
   <!-- app -->
   	<select id="selectAll" resultType="LengtooAuthor">
-  		select * from LengtooAuthor where authorid = ${authorid} and isshow = 1;
+  		select * from Lengtoo_Author where authorid = ${authorid} and isshow = 1;
   	</select>
   </mapper>

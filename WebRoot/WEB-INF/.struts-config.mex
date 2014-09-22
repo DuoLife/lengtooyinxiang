@@ -12,5 +12,6 @@
   <StrutsActivity path="/web/updatewponshow.do" location="50,650" dimension="605,116" />
   <StrutsActivity path="/web/deletewp.do" location="950,650" dimension="642,116" />
   <StrutsActivity path="/web/uploadlengtoowp.do" location="950,1050" dimension="642,116" />
+  <StrutsActivity path="/client2.0/getChartletByPid.do" location="50,1250" dimension="471,116" />
 </FlowViewLayout>
 

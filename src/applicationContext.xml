@@ -83,4 +83,61 @@
 	<bean name="/web/uploadlengtoowp" class="com.lengtoo.impress.web.struts1.action.web.wallpaper.UploadLengtooWallpaper">
 		<property name="service" ref="wallpaperService"></property>
 	</bean>
+<!-- client2.0 -->
+ <!-- dao2.0 -->
+	<bean id="authorDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooAuthorImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="chartletillustrationDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooChartletIllustrationImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="chartletDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooChartletImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="chartletpackageDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooChartletpackageImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="chartletrollimgDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooChartletrollimgImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="emojiDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooEmojiImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="emojipackageDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooEmojipackageImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="emojirollimgDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooEmojirollimgImpl">
+		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+	</bean>
+ <!-- service2.0 -->
+	<bean id="authorService" class="com.lengtoo.impress.service.impl.LengtooAuthorServiceImpl">
+		<property name="dao" ref="authorDao"></property>
+	</bean>
+	<bean id="illustrationService" class="com.lengtoo.impress.service.impl.LengtooChartletIllustrationServiceImpl">
+		<property name="dao" ref="chartletillustrationDao"></property>
+	</bean>
+	<bean id="chartletpackageService" class="com.lengtoo.impress.service.impl.LengtooChartletpackageServiceImpl">
+		<property name="dao" ref="chartletpackageDao"></property>
+	</bean>
+	<bean id="chartletrollimgService" class="com.lengtoo.impress.service.impl.LengtooChartletrollimgServiceImpl">
+		<property name="dao" ref="chartletrollimgDao"></property>
+	</bean>
+	<bean id="chartletService" class="com.lengtoo.impress.service.impl.LengtooChartletServiceImpl">
+		<property name="dao" ref="chartletDao"></property>
+	</bean>
+	<bean id="emojipackageService" class="com.lengtoo.impress.service.impl.LengtooEmojiPackageServiceImpl">
+		<property name="dao" ref="emojipackageDao"></property>
+	</bean>
+	<bean id="emojirollimgService" class="com.lengtoo.impress.service.impl.LengtooEmojirollimgServiceImpl">
+		<property name="dao" ref="emojirollimgDao"></property>
+	</bean>
+	<bean id="emojiService" class="com.lengtoo.impress.service.impl.LengtooEmojiServiceImpl">
+		<property name="dao" ref="emojiDao"></property>
+	</bean>
+ <!-- action2.0 -->
+	<bean name="/client2.0/getChartletByPid" class="com.lengtoo.impress.web.struts1.action.client2.ShowAllCahrtletByPackageid">
+		<property name="aService" ref="authorService"></property>
+		<property name="cService" ref="chartletService"></property>
+		<property name="iService" ref="illustrationService"></property>
+	</bean>
 </beans>

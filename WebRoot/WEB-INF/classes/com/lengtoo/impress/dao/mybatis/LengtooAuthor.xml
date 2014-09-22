@@ -2,9 +2,9 @@
 <!DOCTYPE mapper  
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-  <mapper namespace="LengtooEmoji">
+  <mapper namespace="LengtooAuthor">
   <!-- app -->
-  	<select id="selectById" resultType="LengtooEmoji">
-  		select * from LengtooEmoji where packageid = ${packageid} and isshow = 1 order by createdate desc;
+  	<select id="selectById" resultType="LengtooAuthor">
+  		select * from Lengtoo_Author where authorid = ${authorid};
   	</select>
   </mapper>
