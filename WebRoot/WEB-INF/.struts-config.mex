@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlowViewLayout Version="1.2">
+  <StrutsActivity path="/gamerankinglist.do" location="50,250" dimension="495,116" />
   <StrutsActivity path="/lengtoocardlist.do" location="50,50" dimension="393,116" />
   <StrutsActivity path="/lengtoowallpaperlist.do" location="650,50" dimension="393,116" />
-  <StrutsActivity path="/gamerankinglist.do" location="50,250" dimension="495,116" />
   <StrutsActivity path="/addgameranking.do" location="650,250" dimension="495,116" />
+  <StrutsActivity path="/client2.0/getChartletByPid.do" location="50,1250" dimension="471,116" />
+  <StrutsActivity path="/client2.0/getEmojiByPid.do" location="650,1250" dimension="609,116" />
+  <StrutsActivity path="/client2.0/getChartletpackage.do" location="50,1450" dimension="591,116" />
   <StrutsActivity path="/web/lengtoocardlist.do" location="50,450" dimension="393,116" />
   <StrutsActivity path="/web/updatecardonshow.do" location="50,850" dimension="464,116" />
   <StrutsActivity path="/web/deletecard.do" location="650,850" dimension="464,116" />
@@ -12,6 +15,6 @@
   <StrutsActivity path="/web/updatewponshow.do" location="50,650" dimension="605,116" />
   <StrutsActivity path="/web/deletewp.do" location="950,650" dimension="642,116" />
   <StrutsActivity path="/web/uploadlengtoowp.do" location="950,1050" dimension="642,116" />
-  <StrutsActivity path="/client2.0/getChartletByPid.do" location="50,1250" dimension="471,116" />
+  <StrutsActivity path="/client2.0/getEmojipackage.do" />
 </FlowViewLayout>
 

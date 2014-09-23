@@ -34,5 +34,5 @@ public interface ILengtooChartletrollimgService {
 	 * 
 	 * @date 2014-09-22
 	 */
-	List<Map> getAllChartletpackage_client(Map paramsMap);
+	List<Map> getAllRollimg_client(Map paramsMap);
 }

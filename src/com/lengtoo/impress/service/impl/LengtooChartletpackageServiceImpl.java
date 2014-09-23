@@ -33,7 +33,7 @@ public class LengtooChartletpackageServiceImpl implements ILengtooChartletpackag
 	}
 	
 	String url = LengtooImgPath.getUrl();
-	public List<Map> getAllRollimg_client(Map paramsMap) {
+	public List<Map> getAllChartletpackage_client(Map paramsMap) {
 		List<Map> list = dao.getAllChartletpackage_client(paramsMap);
 		for (Map m: list) {
 			String thumbnaiurl = (String) m.get("thumbnaiurl");

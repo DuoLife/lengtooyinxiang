@@ -1,10 +1,10 @@
 /**
-* <p>Title: ShowAllCahrtletByPackageid.java</p>
+* <p>Title: ShowAllEmojiByPackageid.java</p>
 * <p>Description: </p>
 * <p>Copyright: Copyright (c) 2014</p>
 * <p>Company: ColdWorks</p>
 * @author xuming
-* @date 2014-9-22
+* @date 2014-9-23
 * @version 1.0
 */
 package com.lengtoo.impress.web.struts1.action.client2;
@@ -22,33 +22,22 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.lengtoo.impress.returndata.ReturnData;
-import com.lengtoo.impress.service.ILengtooAuthorService;
-import com.lengtoo.impress.service.ILengtooChartletService;
-import com.lengtoo.impress.service.ILengtooChartletillustrationService;
+import com.lengtoo.impress.service.ILengtooEmojiService;
 
 /**
- * <p>Title: ShowAllCahrtletByPackageid.java</p>
+ * <p>Title: ShowAllEmojiByPackageid.java</p>
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2014</p>
  * <p>Company: ColdWorks</p>
  * @author xuming
- * @date 2014-9-22
+ * @date 2014-9-23
  * Email: vip6ming@126.com
  */
-public class ShowAllCahrtletByPackageid extends Action{
+public class ShowAllEmojiByPackageid extends Action{
 
-	private ILengtooChartletService cService;
-	private ILengtooChartletillustrationService iService;
-	private ILengtooAuthorService aService;
-	
-	public void setcService(ILengtooChartletService cService) {
-		this.cService = cService;
-	}
-	public void setiService(ILengtooChartletillustrationService iService) {
-		this.iService = iService;
-	}
-	public void setaService(ILengtooAuthorService aService) {
-		this.aService = aService;
+	private ILengtooEmojiService eService;
+	public void seteService(ILengtooEmojiService eService) {
+		this.eService = eService;
 	}
 
 	@Override
@@ -60,25 +49,24 @@ public class ShowAllCahrtletByPackageid extends Action{
 		int msg = 0;
 		Map paramsMap = new HashMap();
 		int packageid;
-		int authorid;
+		//int authorid;
 		try {
 			packageid = Integer.parseInt(request.getParameter("packageid"));
-			authorid = Integer.parseInt(request.getParameter("authorid"));
+			//authorid = Integer.parseInt(request.getParameter("authorid"));
 		} catch (Exception e) {
 			msg = 20; //请求参数错误
 			ReturnData.returnData(response, result, success, msg);
 			return null;
 		}
 		paramsMap.put("packageid", packageid);
-		paramsMap.put("authorid", authorid);
+		//paramsMap.put("authorid", authorid);
 		
 		List<Map> chartletList;
 		List<Map> illustrationList;
 		Map author;
 		try {
-			chartletList = cService.getAllRollimg_client(paramsMap);
-			illustrationList = iService.getIllustrationByPackageId_client(paramsMap);
-			author = aService.getAuthorMesgById_client(paramsMap);
+			chartletList = eService.getAllEmoji_client(paramsMap);
+			//author = aService.getAuthorMesgById_client(paramsMap);
 			success = true;
 			if (chartletList.size() != 0) {
 				msg = 11;
@@ -92,9 +80,8 @@ public class ShowAllCahrtletByPackageid extends Action{
 			return null;
 		}
 		
-		result.put("author", author);
-		result.put("chartletlist", chartletList);
-		result.put("illustrationList", illustrationList);
+		result.put("emojilist", chartletList);
+		//result.put("author", author);
 		ReturnData.returnData(response, result, success, msg);
 		return null;
 	}

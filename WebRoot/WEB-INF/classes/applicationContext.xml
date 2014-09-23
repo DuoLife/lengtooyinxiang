@@ -140,4 +140,14 @@
 		<property name="cService" ref="chartletService"></property>
 		<property name="iService" ref="illustrationService"></property>
 	</bean>
+	<bean name="/client2.0/getEmojiByPid" class="com.lengtoo.impress.web.struts1.action.client2.ShowAllEmojiByPackageid">
+		<!-- <property name="aService" ref="authorService"></property> -->
+		<property name="eService" ref="emojiService"></property>
+	</bean>
+	<bean name="/client2.0/getChartletpackage" class="com.lengtoo.impress.web.struts1.action.client2.ShowAllChartletPackage">
+		<property name="cService" ref="chartletpackageService"></property>
+	</bean>
+	<bean name="/client2.0/getEmojipackage" class="com.lengtoo.impress.web.struts1.action.client2.ShowAllEmojiPackage">
+		<property name="eService" ref="emojipackageService"></property>
+	</bean>
 </beans>
