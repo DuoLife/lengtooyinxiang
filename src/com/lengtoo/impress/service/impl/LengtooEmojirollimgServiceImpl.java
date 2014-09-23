@@ -32,8 +32,8 @@ public class LengtooEmojirollimgServiceImpl implements ILengtooEmojirollimgServi
 		this.dao = dao;
 	}
 	String url = LengtooImgPath.getUrl();
-	public List<Map> getAllRollimg_client() {
-		List<Map> list = dao.getAllRollimg_client();
+	public List<Map> getAllRollimg_client(Map paramsMap) {
+		List<Map> list = dao.getAllRollimg_client(paramsMap);
 		for (Map m: list) {
 			String rollimgurl = (String) m.get("rollimgurl");
 			m.put("rollimgurl", url + rollimgurl); 

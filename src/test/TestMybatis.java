@@ -14,7 +14,9 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -53,9 +55,18 @@ public class TestMybatis {
 	public static void main(String[] args) {
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String date = sf.format(new Date());
-		List<LengtooWallpaper> list = session.selectList("LengtooWallpaper.selectAll", "2014-07-22 16:03:06"); 
-		for(LengtooWallpaper card: list) {
-			System.out.println(card);
+//		List<LengtooWallpaper> list = session.selectList("LengtooWallpaper.selectAll", "2014-10-22 16:03:06"); 
+//		for(LengtooWallpaper card: list) {
+//			System.out.println(card);
+//		}
+		Map paramsMap = new HashMap();
+		paramsMap.put("emojiid", 1);
+		try {
+			int i = session.update("LengtooEmoji.numberofusePlus", paramsMap);
+			session.commit();
+			System.out.println(i);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

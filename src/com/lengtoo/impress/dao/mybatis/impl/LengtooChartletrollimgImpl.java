@@ -33,9 +33,9 @@ public class LengtooChartletrollimgImpl extends SqlSessionDaoSupport  implements
 	/* (non-Javadoc)
 	 * @see com.lengtoo.impress.dao.ILengtooChartletrollimgDao#getAllRollimg_client()
 	 */
-	public List<Map> getAllRollimg_client() {
+	public List<Map> getAllRollimg_client(Map paramsMap) {
 		List result = new ArrayList();
-		List<LengtooChartletrollimg> list = getSqlSession().selectList("LengtooChartletrollimg.selectAll");
+		List<LengtooChartletrollimg> list = getSqlSession().selectList("LengtooChartletrollimg.selectAll", paramsMap);
 		for(LengtooChartletrollimg c: list) {
 			Map m = new HashMap();
 			m.put("rollimgid", c.getRollimgid());

@@ -48,4 +48,15 @@ public class LengtooEmojiImpl extends SqlSessionDaoSupport implements ILengtooEm
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.dao.ILengtooEmojiDao#updateNumberofuse_client(int)
+	 */
+	public Map updateNumberofuse_client(int emojiid) {
+		Map result = new HashMap();
+		Map paramsMap = new HashMap();
+		paramsMap.put("emojiid", emojiid);
+		getSqlSession().update("LengtooEmoji.numberofusePlus", paramsMap);
+		return null;
+	}
+
 }

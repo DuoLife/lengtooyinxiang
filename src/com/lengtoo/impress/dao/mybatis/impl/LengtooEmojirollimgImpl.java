@@ -33,9 +33,9 @@ public class LengtooEmojirollimgImpl extends SqlSessionDaoSupport implements ILe
 	/* (non-Javadoc)
 	 * @see com.lengtoo.impress.dao.ILengtooEmojirollimgDao#getAllRollimg_client()
 	 */
-	public List<Map> getAllRollimg_client() {
+	public List<Map> getAllRollimg_client(Map paramsMap) {
 		List result = new ArrayList();
-		List<LengtooEmojirollimg> list = getSqlSession().selectList("LengtooEmojirollimg.selectAll");
+		List<LengtooEmojirollimg> list = getSqlSession().selectList("LengtooEmojirollimg.selectAll", paramsMap);
 		for(LengtooEmojirollimg e: list) {
 			Map m = new HashMap();
 			m.put("rollimgid", e.getRollimgid());

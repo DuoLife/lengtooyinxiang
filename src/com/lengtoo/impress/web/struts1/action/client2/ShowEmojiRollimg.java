@@ -1,5 +1,5 @@
 /**
-* <p>Title: ShowAllEmojiPackage.java</p>
+* <p>Title: ShowEmojiRollimg.java</p>
 * <p>Description: </p>
 * <p>Copyright: Copyright (c) 2014</p>
 * <p>Company: ColdWorks</p>
@@ -9,8 +9,6 @@
 */
 package com.lengtoo.impress.web.struts1.action.client2;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,10 +23,10 @@ import org.apache.struts.action.ActionMapping;
 
 import com.google.gson.Gson;
 import com.lengtoo.impress.returndata.ReturnData;
-import com.lengtoo.impress.service.ILengtooEmojipackageService;
+import com.lengtoo.impress.service.ILengtooEmojirollimgService;
 
 /**
- * <p>Title: ShowAllEmojiPackage.java</p>
+ * <p>Title: ShowEmojiRollimg.java</p>
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2014</p>
  * <p>Company: ColdWorks</p>
@@ -36,10 +34,10 @@ import com.lengtoo.impress.service.ILengtooEmojipackageService;
  * @date 2014-9-23
  * Email: vip6ming@126.com
  */
-public class ShowAllEmojiPackage extends Action{
+public class ShowEmojiRollimg extends Action{
 
-	private ILengtooEmojipackageService eService;
-	public void seteService(ILengtooEmojipackageService eService) {
+	private ILengtooEmojirollimgService eService;
+	public void seteService(ILengtooEmojirollimgService eService) {
 		this.eService = eService;
 	}
 
@@ -51,29 +49,19 @@ public class ShowAllEmojiPackage extends Action{
 		Map paramsMap = new HashMap();
 		boolean success = false;
 		int msg = 0;
-		boolean isOk = false;
-		boolean refresh = Boolean.parseBoolean(request.getParameter("refresh"));
 		String date = null;
-		if(refresh) {
-			SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			date = sf.format(new Date());
-		}else {
-			date = request.getParameter("date");
-		}
 		int limit;
 		try {
 			limit = Integer.parseInt(request.getParameter("limit"));
 		} catch (Exception e) {
-			limit = 10;
+			limit = 4;
 		}
-		if(limit>20 || limit<0) {
-			limit = 10;
+		if(limit>6 || limit<0) {
+			limit = 4;
 		}
-		paramsMap.put("date", date);
 		paramsMap.put("limit", limit);
 		try {
-			List<Map> list =  eService.getAllEmojipackage_client(paramsMap);
-			isOk = true;
+			List<Map> list =  eService.getAllRollimg_client(paramsMap);
 			if(list.size() !=0) {
 				success = true;
 				msg = 11;//success
@@ -81,7 +69,7 @@ public class ShowAllEmojiPackage extends Action{
 				success = true;
 				msg = 12;//数据为空
 			}
-			result.put("emojipackagelist", list);
+			result.put("rollimglist", list);
 			Gson g = new Gson();
 			String json = g.toJson(list);
 		} catch (Exception e) {

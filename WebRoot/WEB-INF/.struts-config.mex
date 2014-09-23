@@ -15,6 +15,8 @@
   <StrutsActivity path="/web/updatewponshow.do" location="50,650" dimension="605,116" />
   <StrutsActivity path="/web/deletewp.do" location="950,650" dimension="642,116" />
   <StrutsActivity path="/web/uploadlengtoowp.do" location="950,1050" dimension="642,116" />
-  <StrutsActivity path="/client2.0/getEmojipackage.do" />
+  <StrutsActivity path="/client2.0/getEmojipackage.do" location="950,1450" dimension="560,116" />
+  <StrutsActivity path="/client2.0/getChartletrollimg.do" location="50,1650" dimension="560,116" />
+  <StrutsActivity path="/client2.0/getEmojirollimg.do" location="950,1650" dimension="555,116" />
 </FlowViewLayout>
 

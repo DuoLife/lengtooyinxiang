@@ -33,5 +33,5 @@ public interface ILengtooEmojirollimgDao {
 	 * 
 	 * @date 2014-9-18
 	 */
-	List<Map> getAllRollimg_client();
+	List<Map> getAllRollimg_client(Map paramsMap);
 }
