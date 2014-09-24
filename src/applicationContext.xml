@@ -156,4 +156,10 @@
 	<bean name="/client2.0/getEmojirollimg" class="com.lengtoo.impress.web.struts1.action.client2.ShowEmojiRollimg">
 		<property name="eService" ref="emojirollimgService"></property>
 	</bean>
+	<bean name="/client2.0/addEmojiNOU" class="com.lengtoo.impress.web.struts1.action.client2.AddEmojiNumberofuser">
+		<property name="eService" ref="emojiService"></property>
+	</bean>
+	<bean name="/client2.0/addChartletPackageNOU" class="com.lengtoo.impress.web.struts1.action.client2.AddChartletPackageNumberofuser">
+		<property name="cService" ref="chartletpackageService"></property>
+	</bean>
 </beans>

@@ -24,13 +24,13 @@ import java.util.Map;
 public interface ILengtooEmojiDao {
 
 	/**
-	 * 获取贴图详细列表信息
+	 * 获取表情详细列表信息
 	 * 
 	 * @author xuming
 	 * 
 	 * @param 贴图包id
 	 * 
-	 * @return list<Map>结构的冷兔贴图详细信息
+	 * @return list<Map>结构的冷兔表情详细信息
 	 * 
 	 * @date 2014-09-19
 	 */

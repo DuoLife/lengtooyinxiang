@@ -41,5 +41,11 @@ public class LengtooChartletpackageServiceImpl implements ILengtooChartletpackag
 		}
 		return list;
 	}
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.service.ILengtooChartletpackageService#updateNumberofuse_client(int)
+	 */
+	public Map updateNumberofuse_client(int packageid) {
+		return dao.updateNumberofuse_client(packageid);
+	}
 
 }

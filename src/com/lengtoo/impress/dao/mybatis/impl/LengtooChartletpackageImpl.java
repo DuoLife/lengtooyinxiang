@@ -58,4 +58,16 @@ public class LengtooChartletpackageImpl extends SqlSessionDaoSupport implements 
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.dao.ILengtooChartletpackageDao#updateNumberofuse_client(int)
+	 */
+	public Map updateNumberofuse_client(int packageid) {
+		Map result = new HashMap();
+		Map paramsMap = new HashMap();
+		paramsMap.put("chartletpackageid", packageid);
+		int isOk = getSqlSession().update("LengtooChartletpackage.numberofusePlus", paramsMap);
+		result.put("isOk", isOk);
+		return result;
+	}
+
 }

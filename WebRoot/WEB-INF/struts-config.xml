@@ -18,6 +18,8 @@
   	<action path="/client2.0/getEmojipackage" type="com.lengtoo.impress.web.struts1.action.client2.ShowAllEmojiPackage"></action>
   	<action path="/client2.0/getChartletrollimg" type="com.lengtoo.impress.web.struts1.action.client2.ShowChartletRollimg"></action>
   	<action path="/client2.0/getEmojirollimg" type="com.lengtoo.impress.web.struts1.action.client2.ShowEmojiRollimg"></action>
+  	<action path="/client2.0/addEmojiNOU" type="com.lengtoo.impress.web.struts1.action.client2.AddEmojiNumberofuser"></action>
+  	<action path="/client2.0/addChartletPackageNOU" type="com.lengtoo.impress.web.struts1.action.client2.AddChartletPackageNumberofuser"></action>
 <!-- web admin -->
 	<!-- card -->
   	<action path="/web/lengtoocardlist" type="com.lengtoo.impress.web.action.web.card.ShowCardList"></action>

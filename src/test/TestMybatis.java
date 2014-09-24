@@ -60,9 +60,9 @@ public class TestMybatis {
 //			System.out.println(card);
 //		}
 		Map paramsMap = new HashMap();
-		paramsMap.put("emojiid", 1);
+		paramsMap.put("chartletpackageid", 1);
 		try {
-			int i = session.update("LengtooEmoji.numberofusePlus", paramsMap);
+			int i = session.update("LengtooChartletpackage.numberofusePlus", paramsMap);
 			session.commit();
 			System.out.println(i);
 		} catch (Exception e) {

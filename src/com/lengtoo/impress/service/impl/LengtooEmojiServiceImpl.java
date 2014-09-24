@@ -41,5 +41,11 @@ public class LengtooEmojiServiceImpl implements ILengtooEmojiService{
 		}
 		return list;
 	}
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.service.ILengtooEmojiService#updateNumberofuse_client(int)
+	 */
+	public Map updateNumberofuse_client(int emojiid) {
+		return dao.updateNumberofuse_client(emojiid);
+	}
 
 }

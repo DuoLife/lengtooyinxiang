@@ -55,8 +55,9 @@ public class LengtooEmojiImpl extends SqlSessionDaoSupport implements ILengtooEm
 		Map result = new HashMap();
 		Map paramsMap = new HashMap();
 		paramsMap.put("emojiid", emojiid);
-		getSqlSession().update("LengtooEmoji.numberofusePlus", paramsMap);
-		return null;
+		int isOk = getSqlSession().update("LengtooEmoji.numberofusePlus", paramsMap);
+		result.put("isOk", isOk);
+		return result;
 	}
 
 }

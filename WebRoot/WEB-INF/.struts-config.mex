@@ -18,5 +18,7 @@
   <StrutsActivity path="/client2.0/getEmojipackage.do" location="950,1450" dimension="560,116" />
   <StrutsActivity path="/client2.0/getChartletrollimg.do" location="50,1650" dimension="560,116" />
   <StrutsActivity path="/client2.0/getEmojirollimg.do" location="950,1650" dimension="555,116" />
+  <StrutsActivity path="/client2.0/addEmojiNOU.do" location="50,1850" dimension="537,116" />
+  <StrutsActivity path="/client2.0/addChartletPackageNOU.do" location="650,1850" dimension="537,116" />
 </FlowViewLayout>
 

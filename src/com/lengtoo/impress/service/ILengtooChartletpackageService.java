@@ -34,4 +34,17 @@ public interface ILengtooChartletpackageService {
 	 * @date 2014-9-22
 	 */
 	List<Map> getAllChartletpackage_client(Map paramsMap);
+	
+	/**
+	 * 增加贴图使用次数
+	 * 
+	 * @author xuming
+	 * 
+	 * @param 表情id
+	 * 
+	 * @return Map 操作实行状态
+	 * 
+	 * @date 2014-09-24
+	 */
+	Map updateNumberofuse_client(int packageid);
 }
