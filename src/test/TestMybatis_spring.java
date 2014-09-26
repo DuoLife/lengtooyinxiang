@@ -118,6 +118,7 @@ public class TestMybatis_spring {
 //		for(Map m: l) {
 //			System.out.println(m);
 //		}
+		
 	}
 	public static void addLengtooWallpaper(String imgName) {
 		Date createdate = new Date();
