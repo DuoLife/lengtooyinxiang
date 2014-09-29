@@ -47,7 +47,7 @@ public class LengtooEmojipackageImpl extends SqlSessionDaoSupport implements ILe
 			m.put("thumbnaiurl", e.getThumbnailurl());
 			m.put("imgwidth", e.getImgwidth());
 			m.put("imgheight", e.getImgheight());
-			m.put("numberofuse", e.getNumberofuse());
+			//m.put("numberofuse", e.getNumberofuse());
 			m.put("authorid", e.getAuthorid());
 			Date d = e.getCreatedate();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -76,7 +76,7 @@ public class ShowAllCahrtletByPackageid extends Action{
 		List<Map> illustrationList;
 		Map author;
 		try {
-			chartletList = cService.getAllRollimg_client(paramsMap);
+			chartletList = cService.getAllChartlet_client(paramsMap);
 			illustrationList = iService.getIllustrationByPackageId_client(paramsMap);
 			author = aService.getAuthorMesgById_client(paramsMap);
 			success = true;

@@ -32,7 +32,7 @@ public class LengtooChartletServiceImpl implements ILengtooChartletService{
 		this.dao = dao;
 	}
 	String url = LengtooImgPath.getUrl();
-	public List<Map> getAllRollimg_client(Map paramsMap) {
+	public List<Map> getAllChartlet_client(Map paramsMap) {
 		List<Map> list = dao.getAllChartlet_client(paramsMap);
 		for (Map m: list) {
 			String chartleturl = (String) m.get("chartleturl");
