@@ -38,29 +38,29 @@ public class TestMybatis_spring {
 	private static ILengtooEmojiDao edao;
 	
 	public static void main(String[] args) {
-		int[] aH = {1,1,2,2,1,2,1,1,2,1,1,2,1,1,2,2,1,1,2,1,1,1,2,2,1,1,1,1,2,2,2,1,1,1,1,1,2,1,1,1,1,1,1,2,1,1};
+		int[] aH = {1,1,2,2,1,2,1,1,2,1,1,2,1,1,2,2,1,1,2,1,1,1,2,2,1,1,1,1,2,2,2,1,1,1,1,1,2,1,1,1,1,1,1,2,1,1,2,1,1,1};
 		System.out.println(aH.length);
-		update();
-//		for(int i=70; i<=74; i++) {
-////			String s = i + ".jpg";
-////			int y = 0;
-////			if(i<10) {
-////				s = "0" + i + ".jpg";
-////			}
-////			if(aH[i-1]==1) {
-////				y=50;
-////			}else {
-////				y=110;
-////			}
-////			System.out.println(y);
-////			addLengtooCard( y, s);  //添加冷兔card信息
-////			addLengtooWallpaper(i + ".jpg");
-//			try {
-//				Thread.sleep(10000);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-//		}
+//		update();
+		for(int i=47; i<=50; i++) {
+			String s = i + ".jpg";
+			int y = 0;
+			if(i<10) {
+				s = "0" + i + ".jpg";
+			}
+			if(aH[i-1]==1) {
+				y=50;
+			}else {
+				y=110;
+			}
+			System.out.println(y);
+			addLengtooCard( y, s);  //添加冷兔card信息
+//			addLengtooWallpaper(i + ".jpg");
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public static void addLengtooCard(int y, String imgName) {
