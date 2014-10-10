@@ -35,7 +35,7 @@ public class LengtooChartletImpl extends SqlSessionDaoSupport implements ILengto
 	 */
 	public List<Map> getAllChartlet_client(Map paramsMap) {
 		List result = new ArrayList();
-		List<LengtooChartlet> list = getSqlSession().selectList("LengtooChartlet.selectAll");
+		List<LengtooChartlet> list = getSqlSession().selectList("LengtooChartlet.selectAll", paramsMap);
 		for(LengtooChartlet e: list) {
 			Map m = new HashMap();
 			m.put("chartletid", e.getChartletid());

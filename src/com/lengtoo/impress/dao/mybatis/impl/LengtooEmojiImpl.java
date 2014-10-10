@@ -35,7 +35,7 @@ public class LengtooEmojiImpl extends SqlSessionDaoSupport implements ILengtooEm
 	 */
 	public List<Map> getAllEmoji_client(Map paramsMap) {
 		List result = new ArrayList();
-		List<LengtooEmoji> list = getSqlSession().selectList("LengtooEmoji.selectAll");
+		List<LengtooEmoji> list = getSqlSession().selectList("LengtooEmoji.selectAll", paramsMap);
 		for(LengtooEmoji e: list) {
 			Map m = new HashMap();
 			m.put("emojiid", e.getEmojiid());

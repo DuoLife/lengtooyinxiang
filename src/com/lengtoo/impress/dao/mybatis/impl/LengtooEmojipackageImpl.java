@@ -53,6 +53,7 @@ public class LengtooEmojipackageImpl extends SqlSessionDaoSupport implements ILe
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String dStr = sdf.format(d);
 			m.put("createdate", dStr);
+			m.put("isnew", e.getIsnew());
 			result.add(m);
 //			m.put("", e.get);
 //			m.put("", e.get);
