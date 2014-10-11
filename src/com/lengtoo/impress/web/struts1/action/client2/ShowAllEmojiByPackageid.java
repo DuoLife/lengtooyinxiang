@@ -22,6 +22,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.lengtoo.impress.returndata.ReturnData;
+import com.lengtoo.impress.service.ILengtooAuthorService;
 import com.lengtoo.impress.service.ILengtooEmojiService;
 
 /**
@@ -36,8 +37,13 @@ import com.lengtoo.impress.service.ILengtooEmojiService;
 public class ShowAllEmojiByPackageid extends Action{
 
 	private ILengtooEmojiService eService;
+	private ILengtooAuthorService aService;
+	
 	public void seteService(ILengtooEmojiService eService) {
 		this.eService = eService;
+	}
+	public void setaService(ILengtooAuthorService aService) {
+		this.aService = aService;
 	}
 
 	@Override
@@ -49,24 +55,25 @@ public class ShowAllEmojiByPackageid extends Action{
 		int msg = 0;
 		Map paramsMap = new HashMap();
 		int packageid;
-		//int authorid;
+		int authorid;
 		try {
 			packageid = Integer.parseInt(request.getParameter("packageid"));
-			//authorid = Integer.parseInt(request.getParameter("authorid"));
+			authorid = Integer.parseInt(request.getParameter("authorid"));
 		} catch (Exception e) {
 			msg = 20; //请求参数错误
 			ReturnData.returnData(response, result, success, msg);
 			return null;
 		}
 		paramsMap.put("packageid", packageid);
-		//paramsMap.put("authorid", authorid);
+		paramsMap.put("authorid", authorid);
+		
 		
 		List<Map> chartletList;
 		List<Map> illustrationList;
 		Map author;
 		try {
 			chartletList = eService.getAllEmoji_client(paramsMap);
-			//author = aService.getAuthorMesgById_client(paramsMap);
+			author = aService.getAuthorMesgById_client(paramsMap);
 			success = true;
 			if (chartletList.size() != 0) {
 				msg = 11;
@@ -81,7 +88,7 @@ public class ShowAllEmojiByPackageid extends Action{
 		}
 		
 		result.put("emojilist", chartletList);
-		//result.put("author", author);
+		result.put("author", author);
 		ReturnData.returnData(response, result, success, msg);
 		return null;
 	}

@@ -42,7 +42,7 @@ public class LengtooChartletImpl extends SqlSessionDaoSupport implements ILengto
 			m.put("chartleturl", e.getChartleturl());
 			m.put("chartletwidth", e.getChartletwidth());
 			m.put("chartletheight", e.getChartletheight());
-			m.put("numberofuse", e.getNumberofuse());
+			//m.put("numberofuse", e.getNumberofuse());
 			result.add(m);
 		}
 		return result;

@@ -53,6 +53,7 @@ public class LengtooChartletpackageImpl extends SqlSessionDaoSupport implements 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String dStr = sdf.format(d);
 			m.put("createdate", dStr);
+			m.put("isnew", c.getIsnew());
 			result.add(m);
 		}
 		return result;
