@@ -37,7 +37,7 @@ public class LengtooChartletpackageImpl extends SqlSessionDaoSupport implements 
 	 */
 	public List<Map> getAllChartletpackage_client(Map paramsMap) {
 		List result = new ArrayList();
-		List<LengtooChartletpackage> list = getSqlSession().selectList("LengtooChartletpackage.selectAll");
+		List<LengtooChartletpackage> list = getSqlSession().selectList("LengtooChartletpackage.selectAll", paramsMap);
 		for(LengtooChartletpackage c: list) {
 			Map m = new HashMap();
 			m.put("chartletpackageid", c.getChartletpackageid());
