@@ -62,7 +62,7 @@ public class AddChartletPackageNumberofuser extends Action{
 				msg = 11; //删除数据成功
 				success = true;
 			}else {
-				msg = 12; //数据已被删除，数据不存在
+				msg = 30; //数据已被删除，数据不存在
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

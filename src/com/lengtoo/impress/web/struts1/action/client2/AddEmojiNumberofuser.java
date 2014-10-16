@@ -59,10 +59,10 @@ public class AddEmojiNumberofuser extends Action{
 			Map m = eService.updateNumberofuse_client(emojiid);
 			int isOk = ((Integer)m.get("isOk"));
 			if(isOk == 1) {
-				msg = 11; //删除数据成功
+				msg = 11; //update数据成功
 				success = true;
 			}else {
-				msg = 12; //数据已被删除，数据不存在
+				msg = 30; //数据已被删除，数据不存在
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
