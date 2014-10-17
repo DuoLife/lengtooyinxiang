@@ -48,4 +48,44 @@ public class LengtooAuthorImpl extends SqlSessionDaoSupport implements ILengtooA
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.dao.ILengtooAuthorDao#getAuthorMesgByChartletpackageId_client(java.util.Map)
+	 */
+	public Map getAuthorMesgByChartletpackageId_client(Map paramsMap) {
+		Map result = new HashMap();
+		LengtooAuthor obj = (LengtooAuthor) getSqlSession().selectOne("LengtooAuthor.selectByChartletPackageid", paramsMap);
+		if(obj != null) {
+			result.put("authorid", obj.getAuthorid());
+			result.put("name", obj.getName());
+			result.put("sex", obj.getSex());
+			result.put("group", obj.getGroup());
+			result.put("department", obj.getDepartment());
+			result.put("createdate", obj.getCreatedate());
+	//		result.put("headimg", obj.getHeadimg());
+	//		result.put("imgwidth", obj.getImgwidth());
+	//		result.put("imgheight", obj.getImgheight());
+		}
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.dao.ILengtooAuthorDao#getAuthorMesgByEmojipackageId_client(java.util.Map)
+	 */
+	public Map getAuthorMesgByEmojipackageId_client(Map paramsMap) {
+		Map result = new HashMap();
+		LengtooAuthor obj = (LengtooAuthor) getSqlSession().selectOne("LengtooAuthor.selectByEmojiPackageid", paramsMap);
+		if(obj != null) {
+			result.put("authorid", obj.getAuthorid());
+			result.put("name", obj.getName());
+			result.put("sex", obj.getSex());
+			result.put("group", obj.getGroup());
+			result.put("department", obj.getDepartment());
+			result.put("createdate", obj.getCreatedate());
+	//		result.put("headimg", obj.getHeadimg());
+	//		result.put("imgwidth", obj.getImgwidth());
+	//		result.put("imgheight", obj.getImgheight());
+		}
+		return result;
+	}
+
 }

@@ -34,4 +34,30 @@ public interface ILengtooAuthorService {
 	 * @date 2014-09-22
 	 */
 	Map getAuthorMesgById_client(Map paramsMap);
+	
+	/**
+	 * 根据EmojipackageId获取作者信息
+	 * 
+	 * @author xuming
+	 * 
+	 * @param EmojipackageId
+	 * 
+	 * @return Map 结构的作者信息
+	 * 
+	 * @date 2014-10-17
+	 */
+	Map getAuthorMesgByEmojipackageId_client(Map paramsMap);
+	
+	/**
+	 * 根据Chartletpackageid获取作者信息
+	 * 
+	 * @author xuming
+	 * 
+	 * @param Chartletpackageid
+	 * 
+	 * @return Map 结构的作者信息
+	 * 
+	 * @date 2014-10-17
+	 */
+	Map getAuthorMesgByChartletpackageId_client(Map paramsMap);
 }

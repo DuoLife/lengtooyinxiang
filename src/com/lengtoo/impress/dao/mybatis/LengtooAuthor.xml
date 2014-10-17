@@ -7,4 +7,10 @@
   	<select id="selectById" resultType="LengtooAuthor">
   		select * from Lengtoo_Author where authorid = ${authorid};
   	</select>
+  	<select id="selectByEmojiPackageid" resultType="LengtooAuthor">
+  		select * from Lengtoo_Author where authorid = (select authorid from Lengtoo_Emojipackage where Emojipackageid = ${packageid});
+  	</select>
+  	<select id="selectByChartletPackageid" resultType="LengtooAuthor">
+  		select * from Lengtoo_Author where authorid = (select authorid from Lengtoo_Chartletpackage where Chartletpackageid = ${packageid});
+  	</select>
   </mapper>

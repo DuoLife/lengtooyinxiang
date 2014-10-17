@@ -31,7 +31,27 @@ public class LengtooAuthorServiceImpl implements ILengtooAuthorService{
 	}
 	
 	public Map getAuthorMesgById_client(Map paramsMap) {
-		return dao.getAuthorMesgById_client(paramsMap);
+		String requestType = (String) paramsMap.get("requestType");
+		if("list".equals(requestType)){
+			return dao.getAuthorMesgById_client(paramsMap);
+		}else if("emojirollimg".equals(requestType)) {
+//			return dao.getAuthorMesgByEmojipackageId_client(paramsMap);
+			return getAuthorMesgByEmojipackageId_client(paramsMap);
+		}else if("chartletrollimg".equals(requestType)) {
+			//return dao.getAuthorMesgByChartletpackageId_client(paramsMap);
+			return getAuthorMesgByChartletpackageId_client(paramsMap);
+		}else {
+			return null;
+		}
+		
+	}
+
+	public Map getAuthorMesgByChartletpackageId_client(Map paramsMap) {
+		return dao.getAuthorMesgByChartletpackageId_client(paramsMap);
+	}
+
+	public Map getAuthorMesgByEmojipackageId_client(Map paramsMap) {
+		return dao.getAuthorMesgByEmojipackageId_client(paramsMap);
 	}
 
 }

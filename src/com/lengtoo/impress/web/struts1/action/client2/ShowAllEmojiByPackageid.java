@@ -55,17 +55,23 @@ public class ShowAllEmojiByPackageid extends Action{
 		int msg = 0;
 		Map paramsMap = new HashMap();
 		int packageid;
-		int authorid;
+		String requestType;
+		int authorid = 0;
 		try {
 			packageid = Integer.parseInt(request.getParameter("packageid"));
-			authorid = Integer.parseInt(request.getParameter("authorid"));
+			requestType = request.getParameter("requestType");
+			if("list".equals(requestType)) {
+				authorid = Integer.parseInt(request.getParameter("authorid"));
+			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			msg = 20; //请求参数错误
 			ReturnData.returnData(response, result, success, msg);
 			return null;
 		}
 		paramsMap.put("packageid", packageid);
 		paramsMap.put("authorid", authorid);
+		paramsMap.put("requestType", requestType);
 		
 		
 		List<Map> chartletList;
