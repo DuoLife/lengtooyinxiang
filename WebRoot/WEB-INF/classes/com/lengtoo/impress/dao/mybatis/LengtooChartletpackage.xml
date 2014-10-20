@@ -10,4 +10,7 @@
 	<update id="numberofusePlus" parameterType="Map">
   		update Lengtoo_Chartletpackage set numberofuse = numberofuse + 1 where chartletpackageid = ${chartletpackageid}
   	</update>
+  	<select id="selectByPid" parameterType="Map" resultType="LengtooChartletpackage">
+		select * from Lengtoo_Chartletpackage where chartletpackageid = ${packageid}
+	</select>
 </mapper>

@@ -47,5 +47,15 @@ public class LengtooChartletpackageServiceImpl implements ILengtooChartletpackag
 	public Map updateNumberofuse_client(int packageid) {
 		return dao.updateNumberofuse_client(packageid);
 	}
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.service.ILengtooChartletpackageService#getOneChartletpackageByPid_client(java.util.Map)
+	 */
+	public Map getOneChartletpackageByPid_client(Map paramsMap) {
+//		Map result = dao.getOneChartletpackageByPid_client(paramsMap);
+//		String thumbnaiurl = (String) result.get("thumbnaiurl");
+//		result.put("thumbnaiurl", url + thumbnaiurl); 
+//		return result;
+		return dao.getOneChartletpackageByPid_client(paramsMap);
+	}
 
 }

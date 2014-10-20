@@ -36,6 +36,19 @@ public interface ILengtooChartletpackageService {
 	List<Map> getAllChartletpackage_client(Map paramsMap);
 	
 	/**
+	 * 根据包id获取一个贴图包信息
+	 * 
+	 * @author xuming
+	 * 
+	 * @param packageid
+	 * 
+	 * @return Map结构的冷兔贴图包信息
+	 * 
+	 * @date 2014-10-20
+	 */
+	Map getOneChartletpackageByPid_client(Map paramsMap);
+	
+	/**
 	 * 增加贴图使用次数
 	 * 
 	 * @author xuming

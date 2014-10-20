@@ -25,6 +25,7 @@ import com.lengtoo.impress.returndata.ReturnData;
 import com.lengtoo.impress.service.ILengtooAuthorService;
 import com.lengtoo.impress.service.ILengtooChartletService;
 import com.lengtoo.impress.service.ILengtooChartletillustrationService;
+import com.lengtoo.impress.service.ILengtooChartletpackageService;
 
 /**
  * <p>Title: ShowAllCahrtletByPackageid.java</p>
@@ -40,6 +41,7 @@ public class ShowAllCahrtletByPackageid extends Action{
 	private ILengtooChartletService cService;
 	private ILengtooChartletillustrationService iService;
 	private ILengtooAuthorService aService;
+	private ILengtooChartletpackageService cpService;
 	
 	public void setcService(ILengtooChartletService cService) {
 		this.cService = cService;
@@ -50,7 +52,10 @@ public class ShowAllCahrtletByPackageid extends Action{
 	public void setaService(ILengtooAuthorService aService) {
 		this.aService = aService;
 	}
-
+	public void setCpService(ILengtooChartletpackageService cpService) {
+		this.cpService = cpService;
+	}
+	
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -80,10 +85,14 @@ public class ShowAllCahrtletByPackageid extends Action{
 		List<Map> chartletList;
 		List<Map> illustrationList;
 		Map author;
+		Map packageMes = null;
 		try {
 			chartletList = cService.getAllChartlet_client(paramsMap);
 			illustrationList = iService.getIllustrationByPackageId_client(paramsMap);
 			author = aService.getAuthorMesgById_client(paramsMap);
+			if("chartletrollimg".equals(requestType)) {
+				packageMes = cpService.getOneChartletpackageByPid_client(paramsMap);
+			}
 			success = true;
 			if (chartletList.size() != 0) {
 				msg = 11;
@@ -100,6 +109,7 @@ public class ShowAllCahrtletByPackageid extends Action{
 		result.put("author", author);
 		result.put("chartletlist", chartletList);
 		result.put("illustrationList", illustrationList);
+		result.put("packageMes", packageMes);
 		ReturnData.returnData(response, result, success, msg);
 		return null;
 	}
