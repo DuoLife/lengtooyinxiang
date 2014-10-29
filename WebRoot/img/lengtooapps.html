@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>无标题文档</title>
+<style>
+	body {padding: 0; margin: 0; background:#F06666;}
+	@media screen and (min-width:640px){
+		#wrapper { width: 640px; margin: 0 auto;}
+		.bj{ position: relative;}
+		.downBtn { display: block; width: 200px; height: 50px;}
+		.position1 { position: absolute; left:340px; top: 390px;}
+		.position2 { position: absolute; left:70px; top: 390px;}
+		.position3 { position: absolute; left:390px; top: 420px;}
+	}
+	@media screen and (max-width:640px){
+		#wrapper { width: 320px; margin: 0 auto;}
+		.bj{ position: relative;}
+		.bj img, .header img { width: 320px;}
+		.downBtn img {width: 100px; height: 26px;}
+		.downBtn { display: block; width: 100px; height: 26px;}
+		.position1 { position: absolute; left:170px; top: 194px;}
+		.position2 { position: absolute; left:34px; top: 194px;}
+		.position3 { position: absolute; left:194px; top: 210px;}
+	}
+</style>
+<script>
+	window.onload = function () {
+		var aBtn = document.getElementsByTagName('a');
+		for(var i=0; i<aBtn.length; i++) {
+			aBtn[i].onmouseover = function () {
+				this.index = i;
+				var aImg = this.getElementsByTagName('img');
+				aImg[0].src = 'img/applist/button02.png';
+			};
+			aBtn[i].onmouseout = function () {
+				this.index = i;
+				var aImg = this.getElementsByTagName('img');
+				aImg[0].src = 'img/applist/button01.png';
+			};
+		}
+	};
+</script>
+</head>
+
+<body>
+	<div id="wrapper">
+    	<div class="header">
+        	<img src="img/applist/header.jpg"/>
+        </div>
+    	<div class="bj">
+        	<a class="downBtn position1" href="" target="_blank"><img src="img/applist/button01.png"/></a>
+        	<img src="img/applist/bj_0.jpg"/>
+        </div>
+    	<div class="bj">
+        	<a class="downBtn position2" href="" target="_blank"><img src="img/applist/button01.png"/></a>
+        	<img src="img/applist/bj_1.jpg"/>
+        </div>
+    	<div class="bj">
+        	<a class="downBtn position3" href="" target="_blank"><img src="img/applist/button01.png"/></a>
+        	<img src="img/applist/bj_2.jpg"/>
+        </div>
+    </div>
+</body>
+</html>
