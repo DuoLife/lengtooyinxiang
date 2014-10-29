@@ -46,6 +46,7 @@ public class LengtooChartletrollimgImpl extends SqlSessionDaoSupport  implements
 			m.put("description", c.getDescription());
 			m.put("type", c.getType());
 			m.put("target", c.getTarget());
+			m.put("createdate", c.getCreatedate());
 			result.add(m);
 		}
 		return result;

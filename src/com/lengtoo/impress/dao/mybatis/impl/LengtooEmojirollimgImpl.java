@@ -46,6 +46,7 @@ public class LengtooEmojirollimgImpl extends SqlSessionDaoSupport implements ILe
 			m.put("description", e.getDescription());
 			m.put("type", e.getType());
 			m.put("target", e.getTarget());
+			m.put("createdate", e.getCreatedate());
 			result.add(m);
 		}
 		return result;

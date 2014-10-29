@@ -78,20 +78,20 @@ public class LengtooChartletpackageImpl extends SqlSessionDaoSupport implements 
 		Map result = new HashMap();
 		List<LengtooChartletpackage> list = getSqlSession().selectList("LengtooChartletpackage.selectByPid", paramsMap);
 		for(LengtooChartletpackage c: list) {
-//			result.put("chartletpackageid", c.getChartletpackageid());
+			result.put("chartletpackageid", c.getChartletpackageid());
 			result.put("title", c.getTitle());
 			result.put("description", c.getDescription());
 			result.put("chartlettotal", c.getChartlettotal());
-//			result.put("thumbnaiurl", c.getThumbnailurl());
-//			result.put("imgwidth", c.getImgwidth());
-//			result.put("imgheight", c.getImgheight());
+			result.put("thumbnaiurl", c.getThumbnailurl());
+			result.put("imgwidth", c.getImgwidth());
+			result.put("imgheight", c.getImgheight());
 			result.put("numberofuse", c.getNumberofuse());
-//			result.put("authorid", c.getAuthorid());
-			//Date d = c.getCreatedate();
-			//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			//String dStr = sdf.format(d);
-			//m.put("createdate", dStr);
-//			result.put("isnew", c.getIsnew());
+			result.put("authorid", c.getAuthorid());
+			Date d = c.getCreatedate();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String dStr = sdf.format(d);
+			result.put("createdate", dStr);
+			result.put("isnew", c.getIsnew());
 		}
 		return result;
 	}
