@@ -96,7 +96,8 @@ public class LengtooCardServiceImpl implements ILengtooCardService{
 		int andHeight = 800;
 		int andOriginX = 60;
 		int andOriginY = Integer.parseInt(site);
-		Date createdate = new Date();;
+		Date createdate = new Date();
+		createdate.setMinutes(createdate.getMinutes() - 3);
 		
 		int width = 500;
 		int height = 800;

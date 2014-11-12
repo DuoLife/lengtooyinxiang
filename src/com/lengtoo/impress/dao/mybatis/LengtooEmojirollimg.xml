@@ -5,6 +5,6 @@
   <mapper namespace="LengtooEmojirollimg">
   <!-- app -->
   	<select id="selectAll" resultType="LengtooEmojirollimg">
-  		select * from Lengtoo_Emojirollimg where isshow = 1 order by createdate desc limit #{limit}
+  		select * from lengtoo_emojirollimg where isshow = 1 order by createdate desc limit #{limit}
   	</select>
   </mapper>

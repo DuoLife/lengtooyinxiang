@@ -66,6 +66,7 @@ public class LengtooWallpaperServiceImpl implements ILengtooWallpaperService{
 	 */
 	private LengtooWallpaper map2LengtooWallpaper(Map map) {
 		Date createdate = new Date();
+		createdate.setMinutes(createdate.getMinutes() - 3);
 		String imgPath = (String) map.get("imgPath");
 		String smallimgPath = (String) map.get("smallimgPath");
 		String ip = (String) map.get("ip");

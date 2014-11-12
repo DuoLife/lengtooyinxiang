@@ -5,9 +5,9 @@
   <mapper namespace="LengtooEmoji">
   <!-- app -->
   	<select id="selectAll" parameterType="Map" resultType="LengtooEmoji">
-  		select * from Lengtoo_Emoji where packageid = ${packageid} and isshow = 1 order by createdate desc;
+  		select * from lengtoo_emoji where packageid = ${packageid} and isshow = 1 order by createdate desc;
   	</select>
   	<update id="numberofusePlus" parameterType="Map">
-  		update Lengtoo_Emoji set numberofuse = numberofuse + 1 where emojiid = ${emojiid}
+  		update lengtoo_emoji set numberofuse = numberofuse + 1 where emojiid = ${emojiid}
   	</update>
   </mapper>

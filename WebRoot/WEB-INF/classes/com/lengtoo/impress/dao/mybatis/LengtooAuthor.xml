@@ -5,12 +5,12 @@
   <mapper namespace="LengtooAuthor">
   <!-- app -->
   	<select id="selectById" resultType="LengtooAuthor">
-  		select * from Lengtoo_Author where authorid = ${authorid};
+  		select * from lengtoo_author where authorid = ${authorid};
   	</select>
   	<select id="selectByEmojiPackageid" resultType="LengtooAuthor">
-  		select * from Lengtoo_Author where authorid = (select authorid from Lengtoo_Emojipackage where Emojipackageid = ${packageid});
+  		select * from lengtoo_author where authorid = (select authorid from lengtoo_emojipackage where emojipackageid = ${packageid});
   	</select>
   	<select id="selectByChartletPackageid" resultType="LengtooAuthor">
-  		select * from Lengtoo_Author where authorid = (select authorid from Lengtoo_Chartletpackage where Chartletpackageid = ${packageid});
+  		select * from lengtoo_author where authorid = (select authorid from lengtoo_chartletpackage where chartletpackageid = ${packageid});
   	</select>
   </mapper>

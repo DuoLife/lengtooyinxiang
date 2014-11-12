@@ -25,12 +25,16 @@
   	<action path="/web/lengtoocardlist" type="com.lengtoo.impress.web.action.web.card.ShowCardList"></action>
   	<action path="/web/updatecardonshow" type="com.lengtoo.impress.web.struts1.action.web.card.UpdateLengtooCardOnShow"></action>
   	<action path="/web/deletecard" type="com.lengtoo.impress.web.struts1.action.web.card.DeleteLengtooCard"></action>
-  	<action path="/web/uploadlengtoocard" type="com.lengtoo.impress.web.struts1.action.web.card.UploadLengtooCard"></action>
+  	<action path="/web/uploadlengtoocard" type="com.lengtoo.impress.web.struts1.action.web.card.UploadLengtooCard">
+	  	<forward name="success" path="/admin/allbicard.html"></forward>
+  	</action>
 	<!-- wallpaper -->
   	<action path="/web/lengtoowallpaperlist" type="com.lengtoo.impress.web.action.web.wallpaper.ShowLengtooWallpaperList"></action>
   	<action path="/web/updatewponshow" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.UpdateLengtooWallpaperOnShow"></action>
   	<action path="/web/deletewp" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.DeleteLengtooWallpaper"></action>
-  	<action path="/web/uploadlengtoowp" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.UploadLengtooWallpaper"></action>
+  	<action path="/web/uploadlengtoowp" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.UploadLengtooWallpaper">
+  		<forward name="success" path="/admin/allbizhi.html"></forward>
+  	</action>
   </action-mappings>
   
   <controller>

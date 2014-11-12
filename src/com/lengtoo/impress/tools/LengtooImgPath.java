@@ -20,12 +20,21 @@ package com.lengtoo.impress.tools;
  */
 public class LengtooImgPath {
 
-//	private static String url = "http://lengtucao.com/lengtooyinxiang";
-	private static String url = "http://192.168.1.110:2103/lengtooyinxiang";
-	//http://localhost:2103/lengtooyinxiang
+	private static String url = "http://lengtucao.com/lengtooyinxiang";
+//	private static String url = "http://192.168.1.110:2103/lengtooyinxiang";
+//	private static String url = "http://localhost:2103/lengtooyinxiang";
+
+	private static String uploadBizhiSuccessUrl = "/lengtooyinxiang/admin/allbizhi.html";
+	private static String uploadCardSuccessUrl = "/lengtooyinxiang/admin/allcard.html";
 
 	public static String getUrl() {
 		return url;
+	}
+	public static String getUploadBizhiSuccessUrl() {
+		return uploadBizhiSuccessUrl;
+	}
+	public static String getUploadCardSuccessUrl() {
+		return uploadCardSuccessUrl;
 	}
 
 	public static void setUrl(String urlStr) {
