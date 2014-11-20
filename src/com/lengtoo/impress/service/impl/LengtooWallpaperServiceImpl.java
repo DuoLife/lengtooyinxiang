@@ -76,8 +76,8 @@ public class LengtooWallpaperServiceImpl implements ILengtooWallpaperService{
 		int smallHeight = 284;
 		int ontop = 0;
 		int onshow = 1;
-		String smallImgurl = imgPath;
-		String bigImgurl = smallimgPath;
+		String smallImgurl = smallimgPath;
+		String bigImgurl = imgPath;
 		String uploadIp = ip;
 		String defaultText = "把祝福送给你的小伙伴吧";
 		
