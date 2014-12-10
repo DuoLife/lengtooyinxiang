@@ -60,7 +60,7 @@ public class UploadLengtooWallpaper extends Action{
 		//service
 		String ip = GetRealIp.getIpAddr(request);
 		map.put("ip", ip);
-		map.put("imgPath", parameter.get("img"));  
+		map.put("imgPath", parameter.get("img"));
 		map.put("smallimgPath", parameter.get("thumbnail"));  
 		//
 		service.addLengtooWallpaper(map);
