@@ -44,10 +44,6 @@ public class AddEmojiPackageMesg extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		String[] url = request.getParameterValues("url");
-		for(String s: url) {
-			System.out.println(s);
-		}
 		String thumbnailurl = "img/abc.jpg";
 		String title = "lengtoo Emoji";
 		String description = "lengtu的表情最棒棒了~";
