@@ -9,9 +9,6 @@
 	</select>
  <!-- web -->
 	<insert id="insertOne" parameterType="LengtooWallpaper">
-		<selectKey resultType="int" keyProperty="wallpaperid">
-			select last_insert_id();
-		</selectKey>
 		insert into lengtoo_bizhi (big_imgurl, small_imgurl, width, height, default_text, upload_ip, createdate, small_width, small_height, ontop, onshow) 
 		values(#{big_imgurl}, #{small_imgurl}, #{width}, #{height}, #{default_text}, #{upload_ip}, #{createdate}, #{small_width}, #{small_height}, #{ontop}, #{onshow});
 	</insert>

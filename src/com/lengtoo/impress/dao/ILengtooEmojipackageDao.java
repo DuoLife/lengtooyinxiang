@@ -12,6 +12,8 @@ package com.lengtoo.impress.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.lengtoo.impress.dao.po.LengtooEmojipackage;
+
 /**
  * <p>Title: ILengtooEmojipackageDao.java</p>
  * <p>Description: </p>
@@ -35,4 +37,16 @@ public interface ILengtooEmojipackageDao {
 	 * @date 2014-09-18
 	 */
 	List<Map> getAllEmojipackage_client(Map paramsMap);
+	/**
+	 * 增加一条冷兔表情包信息，默认为不显示。
+	 * 
+	 * @author xuming
+	 * 
+	 * @param LengtooEmojipackage 对象
+	 * 
+	 * @return 操作成功与否的状态信息
+	 * 
+	 * @date 2014-12-11
+	 */
+	Map insertEmojipackage_web(LengtooEmojipackage emojiPackage);
 }

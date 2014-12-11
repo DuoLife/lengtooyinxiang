@@ -35,6 +35,8 @@
   	<action path="/web/uploadlengtoowp" type="com.lengtoo.impress.web.struts1.action.web.wallpaper.UploadLengtooWallpaper">
   		<forward name="success" path="/admin/allbizhi.html"></forward>
   	</action>
+  	<action path="/web/addemojipackage" type="com.lengtoo.impress.web.struts1.action.web.emoji.AddEmojiPackageMesg">
+  	</action>
   </action-mappings>
   
   <controller>

@@ -83,6 +83,9 @@
 	<bean name="/web/uploadlengtoowp" class="com.lengtoo.impress.web.struts1.action.web.wallpaper.UploadLengtooWallpaper">
 		<property name="service" ref="wallpaperService"></property>
 	</bean>
+	<bean name="/web/addemojipackage" class="com.lengtoo.impress.web.struts1.action.web.emoji.AddEmojiPackageMesg">
+		<property name="service" ref="emojipackageService"></property>
+	</bean>
 <!-- client2.0 -->
  <!-- dao2.0 -->
 	<bean id="authorDao" class="com.lengtoo.impress.dao.mybatis.impl.LengtooAuthorImpl">

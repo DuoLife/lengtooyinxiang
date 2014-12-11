@@ -20,44 +20,12 @@
   <StrutsActivity path="/web/updatewponshow.do" location="50,650" dimension="605,116" />
   <StrutsActivity path="/web/deletewp.do" location="950,650" dimension="642,116" />
   <StrutsActivity path="/web/uploadlengtoowp.do" location="950,1050" dimension="642,116" />
+  <StrutsActivity path="/admin/allbicard.html" location="1250,450" dimension="193,56" />
+  <StrutsActivity path="/admin/allbizhi.html" location="1250,850" dimension="181,56" />
   <StrutsActivity path="/" location="50,2050" dimension="43,56" />
   <StrutsActivity path="admin/allbizhi.html" location="350,2050" dimension="175,56" />
   <StrutsActivity path="admin/allbicard.html" location="650,2050" dimension="187,56" />
-  <StrutsActivity path="/admin/allbicard.html" />
-  <StrutsActivity path="/admin/allbizhi.html" />
-  <StrutsTransition id="/web/uploadlengtoowp.do,success,/,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1525,1166" />
-      <AbsolutePoint location="1525,2078" />
-      <AbsolutePoint location="93,2078" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/web/uploadlengtoocard.do,success,admin/allbicard.html,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="50,1108" />
-      <AbsolutePoint location="-25,1108" />
-      <AbsolutePoint location="-25,2011" />
-      <AbsolutePoint location="743,2011" />
-      <AbsolutePoint location="743,2050" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/web/uploadlengtoowp.do,success,admin/allbizhi.html,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="1525,1166" />
-      <AbsolutePoint location="1525,2181" />
-      <AbsolutePoint location="437,2181" />
-      <AbsolutePoint location="437,2106" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/web/uploadlengtoocard.do,success,admin/allbizhi.html,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="50,1108" />
-      <AbsolutePoint location="-25,1108" />
-      <AbsolutePoint location="-25,2011" />
-      <AbsolutePoint location="437,2011" />
-      <AbsolutePoint location="437,2050" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
+  <StrutsActivity path="/web/addemojipackage.do" location="1250,1850" dimension="647,116" />
   <StrutsTransition id="/web/uploadlengtoowp.do,success,/admin/allbizhi.html,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="1271,1108" />
