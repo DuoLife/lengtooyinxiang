@@ -61,4 +61,15 @@ public class LengtooEmojipackageImpl extends SqlSessionDaoSupport implements ILe
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.lengtoo.impress.dao.ILengtooEmojipackageDao#insertEmojipackage_web(com.lengtoo.impress.dao.po.LengtooEmojipackage)
+	 */
+	public Map insertEmojipackage_web(LengtooEmojipackage emojiPackage) {
+		Map result = new HashMap();
+		int i = getSqlSession().insert("LengtooEmojipackage.insertOne", emojiPackage);
+		result.put("i", i);
+		System.out.println(i);
+		return result;
+	}
+
 }
