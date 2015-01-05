@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<title>冷兔实验室-表情</title>
+<style>
+/*二级导航*/
+#wrap_2nav {background: #F2F9FF; position: relative;}
+.nav {width: 1032px; height: 64px; margin: 0 auto;line-height: 64px; text-align: center;}
+.nav li{width: 164px;float: left; list-style: none; font-size:24px; color: #333;}
+.nav li:hover,.nav .active_2nav  {background: #829BD1; color: #FFF;}
+/*base样式重置*/
+#upload_div {width: 100px; height: 64px;position: absolute; right: 10px; font-size: 16px;}
+#upload_div a{display: block; width: 100px; height: 46px; line-height: 46px;margin-top: 8px;padding-left: 30px; background: url('/lengtooyinxiang/admin/img/upload0.png') 30px center no-repeat; text-align: center; text-decoration: none; color: #666; border: #06F solid 1px;border-radius: 5px;}
+#upload_div a:hover {background: url('/lengtooyinxiang/admin/img/upload1.png') 30px center no-repeat; color: #A3B5C3;}
+/*upload*/
+#uploadImg {width: 1032px; margin: 0 auto;}
+#uploadImg p {margin: 20px 0px 10px; font-size:14px; color: #A3B5C3;}
+#uploadImg .upimg { width: 1000px; height: 130px; border: #B4DEEA 1px solid; position: relative;}
+#uploadImg #smallimg_btn { position: absolute; left: 30px; top: 30px; width: 178px; height: 58px; cursor: pointer; opacity: 0;filter: alpha(opacity=0); z-index: 1;}
+#uploadImg .smallimg_btn { position: absolute; left: 30px; top: 30px; width: 178px; height: 58px; cursor: pointer; border:#B4DEEA 1px dashed; z-index: 0;}
+#uploadImg .addimg {position: absolute; left: 40%; top: 30%; width: 22px;height: 22px; border: #FFF;}
+#uploadImg #show_smallimg { position: absolute; right: 300px; top: 20px; width: 90px; height: 90px;}
+/*content*/
+.content {width: 1032px; margin: 0 auto; position: relative;}
+#uploadImg .input_title{width: 120px; line-height: 20px; position: absolute;font-size: 20px; color: #666;margin: 0; padding: 0;}
+.content .t1{position: absolute;left: 0px; top: 36px;}
+.content .t2{position: absolute;left: 280px; top: 36px;}
+.content .title{position: absolute;left: 130px; top: 36px;border: #B4DEEA 1px solid;}
+.content .description{position: absolute;left: 400px; top: 36px;border: #B4DEEA 1px solid;}
+.nextBtn {background: #0F9; background-image: radial-gradient(#0F0,#0F9); position: absolute; left: 400px; top: 100px; width: 150px; height: 50px; border-radius: 10px;}
+</style>
+<script type="text/javascript" src="js/ming.js"></script>
+<script>
+window.onload = function () {
+	var oFile = document.getElementById("smallimg_btn");
+	var oShowImg = document.getElementById("show_smallimg");
+	addEvent(oFile, 'change', selectImgfn);
+	function selectImgfn() {
+		oShowImg = oFile.files[0];
+		console.dir(oFile.files[0]);
+	}
+};
+function addEvent(obj, attr, fn) {
+	return obj.attachEvent? obj.attachEvent('on'+attr, fn):obj.addEventListener(attr, fn, false);
+}
+</script>
+</head>
+
+<body>
+<div id="wrap_header">
+    <header>
+        <div id="logo">
+            <img src="img/logo.png"/>
+            <p id="logo_title">冷兔实验室</p>
+            <p id="logo_version">后台管理系统V1.0</p>
+        </div>
+        <div id="upload_div">
+            <a id="submit" href="javascript: void(0);">
+                <p>上传</p>
+            </a>
+        </div>
+    </header>
+</div>
+<div id="wrap_2nav">
+    <div class="nav">
+        <a href='uploadwallpaper.html'><li>上传壁纸</li></a>
+        <a href='uploadcard.html'><li>上传卡片</li></a>
+        <a href='#'><li class="active_2nav">上传表情</li></a>
+        <a href='addchartlet.html'><li>上传贴图</li></a>
+    </div>
+</div>
+<form name="upCard" action="/lengtooyinxiang/web/addemojipackage.do" method="post" enctype="multipart/form-data">
+<div id="uploadImg">
+    <p>请上传一张格式 90*90px 为 jpg 的缩略图片</p>
+    <div class="upimg">
+    	<input id="smallimg_btn" name="thumbnail" type="file" />
+    	<input id="thumbnailurl" name="thumbnailurl" type="hidden" />
+        <div class="smallimg_btn"><img class="addimg" src="../img/addimg.png" /></div>
+		<img id="show_smallimg"/>
+    </div>
+    <div class="content">
+        <p class="input_title t1">表情包标题:</p><input class="title" type="text" maxlength="15" name="title"/>
+        <p class="input_title t2">表情包描述:</p><input class="description" type="text" maxlength="50" size="98px" name="description"/>
+    	<input class="nextBtn" type="submit" value="下一步"/>
+    </div>
+</div>
+</form>
+</body>
+</html>

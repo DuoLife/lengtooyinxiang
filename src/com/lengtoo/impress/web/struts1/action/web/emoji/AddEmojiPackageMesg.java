@@ -47,6 +47,10 @@ public class AddEmojiPackageMesg extends Action{
 		String thumbnailurl = "img/abc.jpg";
 		String title = "lengtoo Emoji";
 		String description = "lengtu的表情最棒棒了~";
+		String[] params = request.getParameterValues("url");
+		for(String s: params) {
+			System.out.println(s);
+		}
 		int numberofuse = 100;
 		int emojitotal = 24;
 		Map paramsMap = new HashMap();
