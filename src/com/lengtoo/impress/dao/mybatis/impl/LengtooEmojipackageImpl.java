@@ -43,6 +43,7 @@ public class LengtooEmojipackageImpl extends SqlSessionDaoSupport implements ILe
 			m.put("emojipackageid", e.getEmojipackageid());
 			m.put("title", e.getTitle());
 			m.put("description", e.getDescription());
+			m.put("zipurl", e.getZipurl());
 			m.put("emojitotal", e.getEmojitotal());
 			m.put("thumbnaiurl", e.getThumbnailurl());
 			m.put("imgwidth", e.getImgwidth());

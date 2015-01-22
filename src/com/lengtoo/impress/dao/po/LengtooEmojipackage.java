@@ -29,6 +29,7 @@ public class LengtooEmojipackage implements Serializable{
 	private String thumbnailurl;
 	private String title;
 	private String description;
+	private String zipurl;
 	private Date createdate;
 	private int numberofuse;
 	private int emojitotal;
@@ -61,6 +62,12 @@ public class LengtooEmojipackage implements Serializable{
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getZipurl() {
+		return zipurl;
+	}
+	public void setZipurl(String zipurl) {
+		this.zipurl = zipurl;
 	}
 	public Date getCreatedate() {
 		return createdate;
@@ -139,6 +146,7 @@ public class LengtooEmojipackage implements Serializable{
 		result = prime * result
 				+ ((thumbnailurl == null) ? 0 : thumbnailurl.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		result = prime * result + ((zipurl == null) ? 0 : zipurl.hashCode());
 		return result;
 	}
 	@Override
@@ -188,6 +196,11 @@ public class LengtooEmojipackage implements Serializable{
 				return false;
 		} else if (!title.equals(other.title))
 			return false;
+		if (zipurl == null) {
+			if (other.zipurl != null)
+				return false;
+		} else if (!zipurl.equals(other.zipurl))
+			return false;
 		return true;
 	}
 	@Override
@@ -198,7 +211,8 @@ public class LengtooEmojipackage implements Serializable{
 				+ emojitotal + ", imgheight=" + imgheight + ", imgwidth="
 				+ imgwidth + ", isnew=" + isnew + ", isshow=" + isshow
 				+ ", istop=" + istop + ", numberofuse=" + numberofuse
-				+ ", thumbnailurl=" + thumbnailurl + ", title=" + title + "]";
+				+ ", thumbnailurl=" + thumbnailurl + ", title=" + title
+				+ ", zipurl=" + zipurl + "]";
 	}
-	
+
 }
