@@ -38,7 +38,7 @@ window.onload = function () {
 	var oShowImg = document.getElementById("show_smallimg");
 	addEvent(oFile, 'change', selectImgfn);
 	function selectImgfn() {
-		oShowImg = oFile.files[0];
+		oShowImg.file = oFile.files[0];
 		console.dir(oFile.files[0]);
 	}
 };
