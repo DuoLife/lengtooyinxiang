@@ -37,7 +37,7 @@ public class LengtooEmojiServiceImpl implements ILengtooEmojiService{
 		List<Map> list = dao.getAllEmoji_client(paramsMap);
 		for (Map m: list) {
 			String emojiurl = (String) m.get("emojiurl");
-			m.put("emojiurl", url + emojiurl); 
+			m.put("emojiurl", url + emojiurl);
 		}
 		return list;
 	}

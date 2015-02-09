@@ -37,6 +37,8 @@ public class LengtooEmojiPackageServiceImpl implements ILengtooEmojipackageServi
 		for (Map m: list) {
 			String thumbnaiurl = (String) m.get("thumbnaiurl");
 			m.put("thumbnaiurl", url + thumbnaiurl); 
+			String zipurl = (String) m.get("zipurl");
+			m.put("zipurl", url + zipurl); 
 		}
 		return list;
 	}
