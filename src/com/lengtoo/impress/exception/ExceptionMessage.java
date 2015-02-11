@@ -23,7 +23,7 @@ public class ExceptionMessage {
 //	上传文件类异常
 	public final static String Success = "上传成功";
 	public final static String Fail = "上传失败";
-	public final static String OverSize = "上传文件超过限制大小~";
+	public final static String OverSize = "上传文件超过限制大小~(应小于1MB)";
 	public final static String SeverException = "服务器异常";
 	public final static String MismatchingFileTypeException = "上传类型不匹配";
 	public final static String NULLFileItemException = "上传文件为空";

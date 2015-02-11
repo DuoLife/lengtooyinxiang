@@ -55,13 +55,20 @@ public class UploadLengtooWallpaper extends Action{
 			throws Exception {
 		Map map = new HashMap();
 		UploadFileUtil uf = new UploadFileUtil();
-		Map parameter = uf.getUploadFile2Map(request, response);
-		//System.out.println(parameter);
-		//service
-		String ip = GetRealIp.getIpAddr(request);
-		map.put("ip", ip);
-		map.put("imgPath", parameter.get("img"));
-		map.put("smallimgPath", parameter.get("thumbnail"));  
+		Map parameter;
+		try {
+			parameter = uf.getUploadFile2Map(request, response);
+			//System.out.println(parameter);
+			//service
+			String ip = GetRealIp.getIpAddr(request);
+			map.put("ip", ip);
+			map.put("imgPath", parameter.get("img"));
+			map.put("smallimgPath", parameter.get("thumbnail"));  
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			return null;
+		}
 		//
 		service.addLengtooWallpaper(map);
 		response.sendRedirect(LengtooImgPath.getUploadBizhiSuccessUrl());

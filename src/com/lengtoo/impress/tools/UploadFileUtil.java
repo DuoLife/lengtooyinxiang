@@ -76,8 +76,7 @@ public class UploadFileUtil {
 		}else {
 			mesg = ExceptionMessage.Shit;
 		}
-		response.setCharacterEncoding("utf-8");
-		response.getWriter().print(mesg);
+		outStream(response, mesg);
 		return result;
 	}
 	/**
